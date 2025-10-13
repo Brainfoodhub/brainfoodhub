@@ -1,0 +1,462 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>Sign in · Brain Food Hub</title>
+    <meta name="description" content="Sign in to Brain Food Hub." />
+    <style>
+      :root {
+        /* Color tokens (exactly 5) */
+        --brand: #2d5a27;       /* primary brand green */
+        --brand-2: #4a7c59;     /* secondary green (buttons, accents) */
+        --accent: #a8d5ba;      /* light accent green (borders, subtle fills) */
+        --bg: #f7faf7;          /* off-white neutral background */
+        --text: #101510;        /* near-black text */
+
+        /* Radius + shadows */
+        --radius: 0.75rem;
+        --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+        --shadow-md: 0 6px 16px rgba(0,0,0,0.08);
+        --shadow-lg: 0 8px 28px rgba(0,0,0,0.12);
+      }
+
+      /* Reset-ish */
+      *, *::before, *::after { box-sizing: border-box; }
+      html, body { height: 100%; }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--text);
+        font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+        line-height: 1.55;
+      }
+      img { max-width: 100%; display: block; }
+      a { color: var(--brand-2); text-decoration: none; }
+      a:hover { text-decoration: underline; }
+
+      /* Header */
+      .site-header {
+        background: var(--brand);
+        color: white;
+        border-bottom: 1px solid rgba(0,0,0,0.05);
+      }
+      .site-header__inner {
+        max-width: 1120px;
+        margin: 0 auto;
+        padding: 1rem 1.25rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+      }
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: .625rem;
+        font-weight: 700;
+        letter-spacing: .2px;
+      }
+      .brand__logo {
+        width: 28px;
+        height: 28px;
+        border-radius: 6px;
+        background: white;
+        color: var(--brand);
+        display: grid;
+        place-items: center;
+        font-size: .9rem;
+        font-weight: 800;
+        box-shadow: var(--shadow-sm);
+      }
+      .brand__name {
+        font-size: 1rem;
+      }
+      .site-header__nav {
+        display: none;
+      }
+      @media (min-width: 640px) {
+        .site-header__nav { display: block; }
+        .site-header__nav a {
+          color: white;
+          opacity: .95;
+          font-size: .95rem;
+          margin-left: 1rem;
+        }
+        .site-header__nav a[aria-current="page"] {
+          text-decoration: underline;
+          text-underline-offset: 5px;
+        }
+      }
+
+      /* Main layout */
+      .wrap {
+        min-height: calc(100dvh - 64px);
+        display: grid;
+        place-items: center;
+        padding: 2rem 1.25rem;
+      }
+      .card {
+        width: 100%;
+        max-width: 420px;
+        background: white;
+        border: 1px solid var(--accent);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow-lg);
+        overflow: clip;
+      }
+      .card__head {
+        padding: 1.25rem 1.25rem 0.25rem;
+      }
+      .eyebrow {
+        display: inline-block;
+        font-size: .8rem;
+        font-weight: 700;
+        letter-spacing: .3px;
+        color: var(--brand);
+        background: color-mix(in srgb, var(--accent) 45%, white);
+        padding: .25rem .5rem;
+        border-radius: 999px;
+      }
+      .title {
+        margin: .5rem 0 0;
+        font-size: 1.5rem;
+        line-height: 1.25;
+        letter-spacing: .2px;
+      }
+      .subtitle {
+        margin: .375rem 0 0;
+        color: #364036;
+        font-size: .95rem;
+      }
+      .card__body {
+        padding: 1rem 1.25rem 1.25rem;
+      }
+
+      /* Form */
+      .form {
+        display: grid;
+        gap: .875rem;
+      }
+      .field {
+        display: grid;
+        gap: .375rem;
+      }
+      .label-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      label {
+        font-size: .95rem;
+        font-weight: 600;
+      }
+      .hint {
+        font-size: .85rem;
+        color: #475147;
+      }
+      .input-wrap {
+        position: relative;
+      }
+      input[type="email"],
+      input[type="password"] {
+        width: 100%;
+        appearance: none;
+        font: inherit;
+        color: var(--text);
+        background: white;
+        border: 1px solid var(--accent);
+        border-radius: .65rem;
+        padding: .75rem .875rem;
+        outline: none;
+        box-shadow: var(--shadow-sm);
+        transition: border-color .2s ease, box-shadow .2s ease;
+      }
+      input::placeholder { color: #697469; }
+      input:focus {
+        border-color: var(--brand-2);
+        box-shadow: 0 0 0 4px color-mix(in srgb, var(--brand-2) 18%, transparent);
+      }
+      .toggle-password {
+        position: absolute;
+        right: .25rem;
+        top: 50%;
+        transform: translateY(-50%);
+        display: inline-flex;
+        align-items: center;
+        gap: .35rem;
+        padding: .5rem .625rem;
+        font-size: .85rem;
+        font-weight: 600;
+        color: var(--brand-2);
+        background: transparent;
+        border: none;
+        border-radius: .5rem;
+        cursor: pointer;
+      }
+      .toggle-password:focus-visible {
+        outline: 2px solid var(--brand-2);
+        outline-offset: 2px;
+      }
+
+      .row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .checkbox {
+        display: inline-flex;
+        align-items: center;
+        gap: .5rem;
+        user-select: none;
+      }
+      .checkbox input {
+        width: 1.05rem;
+        height: 1.05rem;
+        accent-color: var(--brand-2);
+      }
+      .link {
+        font-size: .9rem;
+        font-weight: 600;
+      }
+
+      .btn {
+        width: 100%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: .5rem;
+        font-weight: 700;
+        letter-spacing: .2px;
+        padding: .8rem 1rem;
+        border-radius: .65rem;
+        border: 1px solid transparent;
+        cursor: pointer;
+        transition: transform .04s ease, box-shadow .15s ease, background-color .2s ease, color .2s ease;
+      }
+      .btn:active { transform: translateY(1px); }
+
+      .btn--brand {
+        background: var(--brand-2);
+        color: white;
+        box-shadow: var(--shadow-md);
+      }
+      .btn--brand:hover {
+        background: color-mix(in srgb, var(--brand-2) 92%, black);
+      }
+      .btn--outline {
+        background: white;
+        color: var(--brand-2);
+        border-color: var(--accent);
+      }
+      .btn--outline:hover {
+        background: color-mix(in srgb, var(--accent) 30%, white);
+      }
+
+      .or {
+        display: grid;
+        grid-template-columns: 1fr auto 1fr;
+        align-items: center;
+        gap: .75rem;
+        color: #5a645a;
+        margin: .25rem 0;
+      }
+      .or::before, .or::after {
+        content: "";
+        height: 1px;
+        background: var(--accent);
+      }
+
+      .footer {
+        padding: 1rem 1.25rem 1.25rem;
+        border-top: 1px solid var(--accent);
+        background: color-mix(in srgb, var(--accent) 30%, white);
+        color: #253025;
+        font-size: .9rem;
+      }
+      .footer a { font-weight: 700; }
+
+      /* Validation + status */
+      .error {
+        color: #7a0000;
+        background: #ffe9e9;
+        border: 1px solid #ffcccc;
+        padding: .625rem .75rem;
+        border-radius: .5rem;
+        font-size: .9rem;
+      }
+      .success {
+        color: #0f3b1d;
+        background: #e9f7ef;
+        border: 1px solid #c4ebd5;
+        padding: .625rem .75rem;
+        border-radius: .5rem;
+        font-size: .9rem;
+      }
+
+      /* Page footer */
+      .site-footer {
+        color: #415141;
+        text-align: center;
+        font-size: .9rem;
+        padding: 1.25rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header" role="banner">
+      <div class="site-header__inner" aria-label="Site header">
+        <div class="brand">
+          <div class="brand__logo" aria-hidden="true">B</div>
+          <div class="brand__name" aria-label="Brain Food Hub">Brain Food Hub</div>
+        </div>
+        <nav class="site-header__nav" aria-label="Primary">
+          <a href="Brain_health.html" aria-current="page">Home</a>
+          <a href="signin.html">Sign In</a>
+          <a href="contact.html">Contact Us</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Privacy & Policies</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="wrap" role="main">
+      <section class="card" aria-labelledby="signin-title">
+        <div class="card__head">
+          <span class="eyebrow">Welcome back</span>
+          <h1 id="signin-title" class="title">Sign in to your account</h1>
+          <p class="subtitle">Access your saved articles and personalized recommendations.</p>
+        </div>
+
+        <div class="card__body">
+          <div id="form-status" class="sr-only" aria-live="polite"></div>
+
+          <form class="form" id="signInForm" novalidate>
+            <div class="field">
+              <div class="label-row">
+                <label for="email">Email address</label>
+                <span class="hint" id="email-hint">Use the email you registered with</span>
+              </div>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                placeholder="you@example.com"
+                inputmode="email"
+                autocomplete="email"
+                aria-describedby="email-hint"
+                required
+              />
+              <div class="error" id="emailError" hidden>Please enter a valid email address.</div>
+            </div>
+
+            <div class="field">
+              <div class="label-row">
+                <label for="password">Password</label>
+                <a class="link" href="#" id="forgot">Forgot password?</a>
+              </div>
+              <div class="input-wrap">
+                <input
+                  id="password"
+                  name="password"
+                  type="password"
+                  placeholder="Your password"
+                  minlength="8"
+                  autocomplete="current-password"
+                  required
+                />
+                <button type="button" class="toggle-password" id="togglePassword" aria-controls="password" aria-pressed="false">
+                  <span aria-hidden="true">Show</span><span class="sr-only">Toggle password visibility</span>
+                </button>
+              </div>
+              <div class="error" id="passwordError" hidden>Password must be at least 8 characters.</div>
+            </div>
+
+            <div class="row">
+              <label class="checkbox">
+                <input type="checkbox" id="remember" name="remember" />
+                <span>Remember me</span>
+              </label>
+              <span class="hint">Secure by default</span>
+            </div>
+
+            <button class="btn btn--brand" type="submit" id="submitBtn">Sign in</button>
+
+            <div class="or" role="separator" aria-label="Or continue with">Or continue with</div>
+
+           <button id="continueEmail" style="margin-top: 15px; padding:10px 20px; background:#2d5a27; color:white; border:none; border-radius:8px; cursor:pointer;">
+  Continue with Email
+</button>
+
+          </form>
+        </div>
+
+        <div class="footer" aria-label="New here?">
+          New to Brain Food Hub?
+          <a href="#">Create an account</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+      © <span id="year"></span> Brain Food Hub. Eat well, think better.
+    </footer>
+
+    <script>
+  // Get the "Continue with Email" button
+  const continueBtn = document.getElementById('continueEmail');
+
+  // Create popup dynamically
+  const popup = document.createElement('div');
+  popup.id = 'emailPopup';
+  popup.style.position = 'fixed';
+  popup.style.top = '50%';
+  popup.style.left = '50%';
+  popup.style.transform = 'translate(-50%, -50%)';
+  popup.style.background = '#fff';
+  popup.style.border = '2px solid #333';
+  popup.style.padding = '20px';
+  popup.style.borderRadius = '12px';
+  popup.style.boxShadow = '0 4px 20px rgba(0,0,0,0.2)';
+  popup.style.zIndex = '1000';
+  popup.style.display = 'none';
+  popup.style.textAlign = 'center';
+  popup.innerHTML = `
+    <h3>Email Sign-In</h3>
+    <p>Please enter your email address to continue.</p>
+    <input type="email" id="popupEmail" placeholder="Enter your email" style="padding:10px; width:80%; margin-bottom:10px;">
+    <br>
+    <button id="popupClose" style="padding:8px 16px; background:#333; color:#fff; border:none; border-radius:6px;">Close</button>
+  `;
+  document.body.appendChild(popup);
+
+  // Handle button click with animation
+  continueBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    // Add animation to button
+    continueBtn.style.transition = 'all 0.3s ease';
+    continueBtn.style.transform = 'scale(0.95)';
+    continueBtn.textContent = 'Loading...';
+
+    // After a short delay, show popup
+    setTimeout(() => {
+      continueBtn.style.transform = 'scale(1)';
+      continueBtn.textContent = 'Continue with Email';
+      popup.style.display = 'block';
+    }, 400);
+  });
+
+  // Close popup
+  document.body.addEventListener('click', (e) => {
+    if (e.target.id === 'popupClose') {
+      popup.style.display = 'none';
+    }
+  });
+</script>
+
+  </body>
+</html>

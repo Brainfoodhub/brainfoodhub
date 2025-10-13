@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us - Brain Food Hub</title>
+  <meta name="description" content="Contact Brain Food Hub for partnerships, content questions, or community support."/>
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    :root{
+      --green-900:#2d5a27;
+      --green-800:#4a7c59;
+      --green-600:#7fb069;
+      --green-300:#a8d5ba;
+      --text:#333;
+      --muted:#666;
+      --bg:#f8fffe;
+      --card:#ffffff;
+      --shadow:0 5px 15px rgba(0,0,0,0.1);
+      --radius:10px;
+      --error:#b3261e;
+      --ok:#1f7a47;
+    }
+    body{ font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height:1.6; color:var(--text); background:var(--bg); }
+    .container{ max-width:1200px; margin:0 auto; padding:0 20px; }
+
+    header{
+      background: linear-gradient(135deg, var(--green-900) 0%, var(--green-800) 100%);
+      color:#fff; padding:1rem 0; position:sticky; top:0; z-index:1000; box-shadow:0 2px 10px rgba(0,0,0,0.1);
+    }
+    .header-content{ display:flex; justify-content:space-between; align-items:center; }
+    .logo{ font-size:1.8rem; font-weight:700; color:var(--green-300); }
+
+    nav{ background:var(--green-800); }
+    .nav-container{ display:flex; justify-content:space-between; align-items:center; position:relative; }
+    .nav-links{ display:flex; list-style:none; }
+    .nav-links li{ margin:0; }
+    .nav-links a{ color:#fff; text-decoration:none; padding:15px 20px; display:block; transition:background .3s; }
+    .nav-links a:hover, .nav-links a.active{ background:var(--green-900); }
+    .mobile-menu-btn{ display:none; background:none; border:none; color:#fff; font-size:1.5rem; cursor:pointer; }
+
+    .hero{
+      background: linear-gradient(135deg, var(--green-300) 0%, var(--green-600) 100%);
+      color: var(--green-900);
+      padding: 40px 0; margin-bottom:30px; border-bottom:1px solid rgba(0,0,0,0.06);
+    }
+    .hero h1{ font-size:2rem; margin-bottom:8px; }
+
+    .grid{
+      display:grid; gap:20px;
+      grid-template-columns: 2fr 1fr;
+      margin-bottom: 30px;
+    }
+    .card{ background:var(--card); border-radius:var(--radius); box-shadow:var(--shadow); overflow:hidden; }
+    .card-header{
+      background: linear-gradient(135deg, var(--green-300) 0%, var(--green-600) 100%);
+      color:var(--green-900); padding:16px 20px; font-weight:700; font-size:1.1rem;
+    }
+    .card-body{ padding:20px; color:var(--muted); }
+
+    /* Form */
+    form{ display:grid; gap:14px; }
+    .field{ display:flex; flex-direction:column; gap:6px; }
+    label{ color:var(--green-900); font-weight:600; }
+    input[type="text"], input[type="email"], select, textarea{
+      padding:10px 12px; border:1px solid #ddd; border-radius:8px; outline:none;
+      transition: border-color .2s ease, box-shadow .2s ease; font-size:1rem; background:#fff;
+    }
+    textarea{ min-height:140px; resize:vertical; }
+    input:focus, select:focus, textarea:focus{ border-color:var(--green-600); box-shadow:0 0 0 3px rgba(127,176,105,0.2); }
+    .row{ display:grid; gap:14px; grid-template-columns: 1fr 1fr; }
+    .actions{ display:flex; gap:10px; flex-wrap:wrap; }
+    .btn{
+      border:none; cursor:pointer; padding:10px 16px; border-radius:999px; font-weight:700;
+      transition: transform .08s ease, background .2s ease;
+    }
+    .btn-primary{ background:var(--green-600); color:#fff; }
+    .btn-primary:hover{ background:var(--green-900); }
+    .btn:active{ transform: translateY(1px); }
+    .help{ font-size:.9rem; color:#4b6b4b; }
+    .error{ color:var(--error); font-size:.9rem; }
+    .status{ margin-top:8px; font-weight:600; }
+    .status.ok{ color:var(--ok); }
+    .status.err{ color:var(--error); }
+
+    /* Sidebar */
+    .contact-block{ display:grid; gap:10px; }
+    .info-item{ background:#f0f8f0; border:1px solid #e0efe4; border-radius:8px; padding:12px; }
+    .info-item strong{ color:var(--green-900); }
+
+    /* Map placeholder */
+    .map{
+      height:220px; border-radius:8px; background:#eaf6ef; display:flex; align-items:center; justify-content:center; color:#2a4a2a;
+      border:1px dashed #9bc9a7;
+    }
+
+    footer{
+      background:var(--green-900); color:#fff; padding:30px 0; margin-top:50px; text-align:center;
+    }
+    .footer-content{
+      display:grid; gap:30px;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      margin-bottom: 20px;
+    }
+    .footer-section h4{ color:var(--green-300); margin-bottom:12px; }
+    .footer-section a{ color:#fff; text-decoration:none; display:block; margin:6px 0; }
+    .footer-section a:hover{ color:var(--green-300); }
+
+    @media (max-width: 900px){ .grid{ grid-template-columns: 1fr; } }
+    @media (max-width: 768px){
+      .nav-links{
+        display:none; flex-direction:column; position:absolute; top:100%; left:0; width:100%; background:var(--green-800);
+      }
+      .nav-links.active{ display:flex; }
+      .mobile-menu-btn{ display:block; }
+      .row{ grid-template-columns:1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header role="banner">
+    <div class="container">
+      <div class="header-content">
+        <div class="logo" aria-label="Brain Food Hub logo">🧠 Brain Food Hub</div>
+      </div>
+    </div>
+  </header>
+
+  <nav aria-label="Primary">
+    <div class="container">
+      <div class="nav-container">
+        <ul class="nav-links" id="navLinks">
+          <li><a href="Brain_health.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html" class="active" aria-current="page">Contact Us</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+        </ul>
+        <button class="mobile-menu-btn" id="menuBtn" aria-label="Toggle navigation">☰</button>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero" role="region" aria-labelledby="contact-hero-title">
+    <div class="container">
+      <h1 id="contact-hero-title">Get in Touch</h1>
+      <p>Questions, feedback, or partnership ideas? We’d love to hear from you.</p>
+    </div>
+  </section>
+
+  <main class="container" role="main">
+    <div class="grid">
+      <section class="card" aria-labelledby="contact-form-title">
+        <div class="card-header" id="contact-form-title">Send a Message</div>
+        <div class="card-body">
+          <form id="contactForm" novalidate>
+            <div class="row">
+              <div class="field">
+                <label for="name">Full Name</label>
+                <input id="name" name="name" type="text" autocomplete="name" placeholder="Jane Doe" required aria-required="true"/>
+                <small class="error" id="nameError" aria-live="polite"></small>
+              </div>
+              <div class="field">
+                <label for="email">Email Address</label>
+                <input id="email" name="email" type="email" autocomplete="email" placeholder="jane@example.com" required aria-required="true"/>
+                <small class="error" id="emailError" aria-live="polite"></small>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="topic">Topic</label>
+              <select id="topic" name="topic" required aria-required="true">
+                <option value="">Select a topic…</option>
+                <option value="general">General Question</option>
+                <option value="content">Content Feedback</option>
+                <option value="partnerships">Partnerships</option>
+                <option value="support">Support</option>
+              </select>
+              <small class="error" id="topicError" aria-live="polite"></small>
+            </div>
+
+            <div class="field">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" placeholder="How can we help?" required aria-required="true"></textarea>
+              <small class="help">We typically respond within 1–2 business days.</small>
+              <small class="error" id="messageError" aria-live="polite"></small>
+            </div>
+
+            <div class="actions">
+              <button class="btn btn-primary" type="submit">Send Message</button>
+              <button class="btn" type="reset" aria-label="Reset form">Reset</button>
+            </div>
+            <div id="formStatus" class="status" aria-live="polite"></div>
+          </form>
+        </div>
+      </section>
+
+      <aside class="card" aria-labelledby="contact-info-title">
+        <div class="card-header" id="contact-info-title">Contact Information</div>
+        <div class="card-body">
+          <div class="contact-block">
+            <div class="info-item"><strong>Email:</strong> barinfoodhub.contact@gmail.com</div>
+            <div class="info-item"><strong>Press:</strong> brainfoodhub.press@gmail.com</div>
+            <div class="info-item"><strong>Partnerships:</strong> brainfoodhub.partners@gmail.com</div>
+             <div class="info-item">919 Mueller Key, Denver, CO 80201, US</div>
+          </div>
+
+          <div style="height:12px"></div>
+          <!-- <div class="card" aria-hidden="true">
+            <div class="card-body">
+              <div class="map">919 Mueller Key, Denver, CO 80201, US</div>
+            </div>
+          </div> -->
+        </div>
+      </aside>
+    </div>
+
+    <section class="card" aria-labelledby="faq-title">
+      <div class="card-header" id="faq-title">FAQ</div>
+      <div class="card-body">
+        <details>
+          <summary><strong>Do you provide medical advice?</strong></summary>
+          <p>We share educational content only and encourage discussing changes with your healthcare provider.</p>
+        </details>
+        <details>
+          <summary><strong>Can I contribute a recipe?</strong></summary>
+          <p>Yes! Choose “Content Feedback” above and include your recipe; our team will review submissions weekly.</p>
+        </details>
+        <details>
+          <summary><strong>Do you accept sponsorships?</strong></summary>
+          <p>We consider partnerships aligned with our mission and evidence standards. Select “Partnerships” and share details.</p>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <footer role="contentinfo">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>Brain Food Categories</h4>
+          <a href="./Brain_health-VPBoo.html">Antioxidants</a>
+          <a href="./Brain_health-VPBoo.html">Omega-3 Sources</a>
+          <a href="./Brain_health-VPBoo.html">Memory Boosters</a>
+          <a href="./Brain_health-VPBoo.html">Anti-Inflammatory</a>
+        </div>
+        <div class="footer-section">
+          <h4>Resources</h4>
+          <a href="./Brain_health-VPBoo.html">Meal Planning Guide</a>
+          <a href="./Brain_health-VPBoo.html">Recipe Collection</a>
+          <a href="./Brain_health-VPBoo.html">Nutrition Calculator</a>
+          <a href="./Brain_health-VPBoo.html">Shopping Lists</a>
+        </div>
+        <div class="footer-section">
+          <h4>About</h4>
+          <a href="about.html">About Us</a>
+          <!-- <a href="about.html#team-title">Expert Team</a> -->
+          <a href="contact.html">Contact Us</a>
+          <a href="privacy.html">Privacy Policy</a>
+        </div>
+      </div>
+      <p>&copy; 2025 Brain Food Hub. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu
+    const menuBtn = document.getElementById('menuBtn');
+    const navLinks = document.getElementById('navLinks');
+    menuBtn.addEventListener('click', () => navLinks.classList.toggle('active'));
+
+    // Form validation + simulated submit
+    const form = document.getElementById('contactForm');
+    const statusEl = document.getElementById('formStatus');
+
+    const byId = id => document.getElementById(id);
+    const nameEl = byId('name');
+    const emailEl = byId('email');
+    const topicEl = byId('topic');
+    const msgEl = byId('message');
+
+    const nameError = byId('nameError');
+    const emailError = byId('emailError');
+    const topicError = byId('topicError');
+    const messageError = byId('messageError');
+
+    function validateEmail(v){
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+    }
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      let ok = true;
+      // Reset errors
+      [nameError, emailError, topicError, messageError].forEach(el => el.textContent = '');
+      statusEl.textContent = '';
+      statusEl.className = 'status';
+
+      if(!nameEl.value.trim()){
+        nameError.textContent = 'Please enter your full name.'; ok = false;
+      }
+      if(!emailEl.value.trim()){
+        emailError.textContent = 'Please enter your email address.'; ok = false;
+      } else if(!validateEmail(emailEl.value.trim())){
+        emailError.textContent = 'Please enter a valid email address.'; ok = false;
+      }
+      if(!topicEl.value){
+        topicError.textContent = 'Please select a topic.'; ok = false;
+      }
+      if(!msgEl.value.trim()){
+        messageError.textContent = 'Please enter a message.'; ok = false;
+      }
+
+      if(!ok){
+        statusEl.textContent = 'Please fix the errors above and try again.'; 
+        statusEl.classList.add('err');
+        return;
+      }
+
+      // Simulate network send
+      statusEl.textContent = 'Sending…';
+      setTimeout(() => {
+        statusEl.textContent = 'Thanks! Your message has been sent.';
+        statusEl.classList.add('ok');
+        form.reset();
+      }, 700);
+    });
+  </script>
+</body>
+</html>

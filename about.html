@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us - Brain Food Hub</title>
+  <meta name="description" content="Learn about Brain Food Hub's mission, team, and values promoting cognitive wellness through nutrition."/>
+  <style>
+    /* Base reset and tokens */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root{
+      --green-900:#2d5a27;
+      --green-800:#4a7c59;
+      --green-600:#7fb069;
+      --green-300:#a8d5ba;
+      --text:#333;
+      --muted:#666;
+      --bg:#f8fffe;
+      --card:#ffffff;
+      --shadow: 0 5px 15px rgba(0,0,0,0.1);
+      --radius: 10px;
+    }
+    body{ font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height:1.6; color:var(--text); background:var(--bg); }
+    .container{ max-width:1200px; margin:0 auto; padding:0 20px; }
+
+    /* Header */
+    header{
+      background: linear-gradient(135deg, var(--green-900) 0%, var(--green-800) 100%);
+      color:#fff; padding:1rem 0; position:sticky; top:0; z-index:1000;
+      box-shadow:0 2px 10px rgba(0,0,0,0.1);
+    }
+    .header-content{ display:flex; justify-content:space-between; align-items:center; }
+    .logo{ font-size:1.8rem; font-weight:700; color:var(--green-300); }
+
+    /* Nav */
+    nav{ background:var(--green-800); }
+    .nav-container{ display:flex; justify-content:space-between; align-items:center; position:relative; }
+    .nav-links{ display:flex; list-style:none; }
+    .nav-links li{ margin:0; }
+    .nav-links a{
+      color:#fff; text-decoration:none; padding:15px 20px; display:block; transition:background .3s;
+    }
+    .nav-links a:hover, .nav-links a.active{ background:var(--green-900); }
+    .mobile-menu-btn{ display:none; background:none; border:none; color:#fff; font-size:1.5rem; cursor:pointer; }
+
+    /* Page Hero */
+    .hero{
+      background: linear-gradient(135deg, var(--green-300) 0%, var(--green-600) 100%);
+      color: var(--green-900);
+      padding: 40px 0;
+      margin-bottom: 30px;
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+    }
+    .hero h1{ font-size:2rem; margin-bottom:8px; }
+    .hero p{ color:#1b3a1a; }
+
+    /* Content blocks */
+    .grid{
+      display:grid; gap:20px;
+      grid-template-columns: 2fr 1fr;
+      margin-bottom: 30px;
+    }
+    .card{
+      background:var(--card); border-radius:var(--radius); box-shadow:var(--shadow); overflow:hidden;
+    }
+    .card-header{
+      background: linear-gradient(135deg, var(--green-300) 0%, var(--green-600) 100%);
+      color:var(--green-900); padding:16px 20px; font-weight:700; font-size:1.1rem;
+    }
+    .card-body{ padding:20px; color:var(--muted); }
+    .card-body h3{ color:var(--green-900); margin:10px 0; }
+    .list{ list-style:none; padding-left:0; }
+    .list li{
+      padding:10px 12px; border:1px solid #eee; border-radius:8px; margin-bottom:10px; background:#f6fbf7;
+    }
+
+    /* Team */
+    .team{
+      display:grid; gap:16px;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+    .member{
+      background:#fff; border-radius:10px; box-shadow:0 3px 10px rgba(0,0,0,0.08); overflow:hidden;
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .member:hover{ transform: translateY(-4px); box-shadow:0 6px 16px rgba(0,0,0,0.12); }
+    .member-figure{ background:#eaf6ef; height:140px; display:flex; align-items:center; justify-content:center; }
+    .member-figure span{ font-size:48px; }
+    .member-body{ padding:14px 16px; }
+    .member-body h4{ color:var(--green-900); margin-bottom:6px; }
+    .role{ color:#2f6d38; font-size:.9rem; margin-bottom:8px; }
+
+    /* Sidebar callouts */
+    .callout{ border-left:4px solid var(--green-600); background:#f0f8f0; padding:14px; border-radius:6px; color:#2a4a2a; }
+
+    /* Footer */
+    footer{
+      background:var(--green-900); color:#fff; padding:30px 0; margin-top:50px; text-align:center;
+    }
+    .footer-content{
+      display:grid; gap:30px;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      margin-bottom: 20px;
+    }
+    .footer-section h4{ color:var(--green-300); margin-bottom:12px; }
+    .footer-section a{ color:#fff; text-decoration:none; display:block; margin:6px 0; }
+    .footer-section a:hover{ color:var(--green-300); }
+
+    /* Responsive */
+    @media (max-width: 900px){
+      .grid{ grid-template-columns: 1fr; }
+    }
+    @media (max-width: 768px){
+      .nav-links{
+        display:none; flex-direction:column; position:absolute; top:100%; left:0; width:100%; background:var(--green-800);
+      }
+      .nav-links.active{ display:flex; }
+      .mobile-menu-btn{ display:block; }
+    }
+  </style>
+</head>
+<body>
+  <header role="banner">
+    <div class="container">
+      <div class="header-content">
+        <div class="logo" aria-label="Brain Food Hub logo">🧠 Brain Food Hub</div>
+      </div>
+    </div>
+  </header>
+
+  <nav aria-label="Primary">
+    <div class="container">
+      <div class="nav-container">
+        <ul class="nav-links" id="navLinks">
+          <li><a href="Brain_health.html">Home</a></li>
+          <li><a href="about.html" class="active" aria-current="page">About Us</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+
+
+        </ul>
+        <button class="mobile-menu-btn" id="menuBtn" aria-label="Toggle navigation">☰</button>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero" role="region" aria-labelledby="about-hero-title">
+    <div class="container">
+      <h1 id="about-hero-title">Our Mission: Cognitive Wellness Through Nutrition</h1>
+      <p>We empower people to nourish their brains with approachable science, practical meal ideas, and expert-backed guidance.</p>
+    </div>
+  </section>
+
+  <main class="container" role="main">
+    <div class="grid">
+      <section class="card" aria-labelledby="mission-title">
+        <div class="card-header" id="mission-title">Who We Are</div>
+        <div class="card-body">
+          <p>
+            Brain Food Hub is a community-driven resource for evidence-based nutrition that supports memory,
+            focus, and long-term brain health. We translate research into everyday habits—recipes, shopping tips,
+            and simple routines you can sustain.
+          </p>
+          <h3>Our Core Pillars</h3>
+          <ul class="list" role="list">
+            <li>Science-first content that’s practical and clear</li>
+            <li>Diverse, inclusive food culture and budgets</li>
+            <li>Sustainable habits over quick fixes</li>
+            <li>Transparent sourcing and citations</li>
+          </ul>
+        </div>
+      </section>
+
+      <aside class="card" aria-labelledby="quick-facts-title">
+        <div class="card-header" id="quick-facts-title">Quick Facts</div>
+        <div class="card-body">
+          <div class="callout" role="note">
+            Founded in 2025, we publish weekly guides and curate meal plans aligned with the Mediterranean pattern.
+          </div>
+          <ul class="list" style="margin-top:12px" role="list">
+            <li>100k+ monthly readers</li>
+            <li>Backed by dietitians and neuroscientists</li>
+            <li>Ad-free newsletter, every Friday</li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+
+    <section class="card" aria-labelledby="team-title" style="margin-bottom: 20px;">
+      <div class="card-header" id="team-title">Meet the Team</div>
+      <div class="card-body">
+        <div class="team" role="list">
+          <article class="member" role="listitem" aria-labelledby="t1-name">
+            <div class="member-figure" aria-hidden="true"><span>👩🏻‍⚕️</span></div>
+            <div class="member-body">
+              <h4 id="t1-name">Dr. Lena Ortiz</h4>
+              <div class="role">Neuroscientist, Research Lead</div>
+              <p>Guides our evidence review process and keeps content tightly aligned with current brain health research.</p>
+            </div>
+          </article>
+          <article class="member" role="listitem" aria-labelledby="t2-name">
+            <div class="member-figure" aria-hidden="true"><span>🥗</span></div>
+            <div class="member-body">
+              <h4 id="t2-name">Marcus Lee, RD</h4>
+              <div class="role">Registered Dietitian</div>
+              <p>Builds practical meal plans and shopping lists with flexible, budget-friendly options.</p>
+            </div>
+          </article>
+          <article class="member" role="listitem" aria-labelledby="t3-name">
+            <div class="member-figure" aria-hidden="true"><span>🧑🏽‍🍳</span></div>
+            <div class="member-body">
+              <h4 id="t3-name">Priya Kapoor</h4>
+              <div class="role">Recipe Developer</div>
+              <p>Creates accessible recipes that maximize key brain-supportive nutrients without sacrificing flavor.</p>
+            </div>
+          </article>
+          <article class="member" role="listitem" aria-labelledby="t4-name">
+            <div class="member-figure" aria-hidden="true"><span>🧭</span></div>
+            <div class="member-body">
+              <h4 id="t4-name">Samir Rahman</h4>
+              <div class="role">Community & Partnerships</div>
+              <p>Connects with experts and organizations to expand our educational impact and programs.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="card" aria-labelledby="values-title">
+      <div class="card-header" id="values-title">Values & Approach</div>
+      <div class="card-body">
+        <h3>How We Work</h3>
+        <ul class="list" role="list">
+          <li>We cite primary sources and reputable reviews</li>
+          <li>We differentiate between whole-food benefits and supplements</li>
+          <li>We design for long-term habits over short-term trends</li>
+          <li>We welcome feedback and revise content when new evidence emerges</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer role="contentinfo">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>Brain Food Categories</h4>
+          <a href="./Brain_health-VPBoo.html">Antioxidants</a>
+          <a href="./Brain_health-VPBoo.html">Omega-3 Sources</a>
+          <a href="./Brain_health-VPBoo.html">Memory Boosters</a>
+          <a href="./Brain_health-VPBoo.html">Anti-Inflammatory</a>
+        </div>
+        <div class="footer-section">
+          <h4>Resources</h4>
+          <a href="./Brain_health-VPBoo.html">Meal Planning Guide</a>
+          <a href="./Brain_health-VPBoo.html">Recipe Collection</a>
+          <a href="./Brain_health-VPBoo.html">Nutrition Calculator</a>
+          <a href="./Brain_health-VPBoo.html">Shopping Lists</a>
+        </div>
+        <div class="footer-section">
+          <h4>About</h4>
+          <a href="about.html">Our Mission</a>
+          <a href="about.html#team-title">Expert Team</a>
+          <a href="contact.html">Contact Us</a>
+          <a href="./Brain_health-VPBoo.html">Privacy Policy</a>
+        </div>
+      </div>
+      <p>&copy; 2025 Brain Food Hub. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const navLinks = document.getElementById('navLinks');
+    menuBtn.addEventListener('click', () => navLinks.classList.toggle('active'));
+  </script>
+</body>
+</html>

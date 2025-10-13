@@ -1,0 +1,1590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brain Healthy Foods - Nutrition for Cognitive Wellness</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8fffe;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #2d5a27 0%, #4a7c59 100%);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #a8d5ba;
+        }
+
+        .search-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .search-box {
+            padding: 8px 15px;
+            border: none;
+            border-radius: 25px;
+            outline: none;
+            width: 250px;
+        }
+
+        .search-btn {
+            background: #a8d5ba;
+            color: #2d5a27;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        /* Navigation */
+        nav {
+            background: #4a7c59;
+            padding: 0;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin: 0;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 15px 20px;
+            display: block;
+            transition: background 0.3s;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            background: #2d5a27;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Main Content */
+        .main-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+            margin: 30px 0;
+        }
+
+        .content-section {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .section-header {
+            background: linear-gradient(135deg, #a8d5ba 0%, #7fb069 100%);
+            color: #2d5a27;
+            padding: 20px;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .section-content {
+            padding: 20px;
+        }
+
+        /* Featured Articles */
+        .featured-article {
+            margin-bottom: 30px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .featured-article:hover {
+            transform: translateY(-5px);
+        }
+
+        .featured-article img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .featured-article h3 {
+            color: #2d5a27;
+            margin: 15px 0 10px;
+            font-size: 1.3rem;
+        }
+
+        .featured-article p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .article-meta {
+            color: #999;
+            font-size: 0.9rem;
+            margin-top: 10px;
+        }
+
+        /* Article Grid */
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .article-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .article-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+        }
+
+        .article-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .article-card-content {
+            padding: 15px;
+        }
+
+        .article-card h4 {
+            color: #2d5a27;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .article-card p {
+            color: #666;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .sidebar-section {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .sidebar-header {
+            background: #7fb069;
+            color: white;
+            padding: 15px;
+            font-weight: bold;
+        }
+
+        .sidebar-content {
+            padding: 15px;
+        }
+
+        .news-item {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .news-item:last-child {
+            border-bottom: none;
+        }
+
+        .news-item a {
+            color: #2d5a27;
+            text-decoration: none;
+            font-weight: 500;
+            display: block;
+            transition: color 0.3s;
+        }
+
+        .news-item a:hover {
+            color: #7fb069;
+        }
+
+        .news-date {
+            color: #999;
+            font-size: 0.8rem;
+            margin-top: 5px;
+        }
+
+        /* Newsletter */
+        .newsletter-form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .newsletter-input {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            outline: none;
+        }
+
+        .newsletter-btn {
+            background: #7fb069;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .newsletter-btn:hover {
+            background: #2d5a27;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+        }
+
+        .modal-content {
+            background-color: white;
+            margin: 5% auto;
+            padding: 0;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 800px;
+            max-height: 80vh;
+            overflow-y: auto;
+            position: relative;
+        }
+
+        .modal-header {
+            background: linear-gradient(135deg, #2d5a27 0%, #4a7c59 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .modal-body {
+            padding: 20px;
+            line-height: 1.8;
+        }
+
+        .modal-body h3 {
+            color: #2d5a27;
+            margin: 20px 0 10px;
+        }
+
+        .modal-body ul {
+            margin: 15px 0;
+            padding-left: 20px;
+        }
+
+        .modal-body li {
+            margin: 8px 0;
+        }
+
+        .close {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            color: white;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover {
+            opacity: 0.7;
+        }
+
+        /* Footer */
+        footer {
+            background: #2d5a27;
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 50px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 20px;
+        }
+
+        .footer-section h4 {
+            color: #a8d5ba;
+            margin-bottom: 15px;
+        }
+
+        .footer-section a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            margin: 5px 0;
+        }
+
+        .footer-section a:hover {
+            color: #a8d5ba;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .search-box {
+                width: 200px;
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: #4a7c59;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .main-content {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .articles-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .modal-content {
+                width: 95%;
+                margin: 10% auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">🧠 Brain Food Hub</div>
+                <!-- <div class="search-container">
+                    <input type="text" class="search-box" placeholder="Search brain-healthy foods...">
+                    <button class="search-btn">Search</button>
+                </div> -->
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <div class="nav-container">
+                <ul class="nav-links">
+                    <li><a href="#" class="nav-link active" data-section="home">Home</a></li>
+                    <li><a href="#" class="nav-link" data-section="antioxidants">Antioxidant Foods</a></li>
+                    <li><a href="#" class="nav-link" data-section="omega3">Omega-3 Sources</a></li>
+                    <li><a href="#" class="nav-link" data-section="memory">Memory Boosters</a></li>
+                    <li><a href="#" class="nav-link" data-section="inflammation">Anti-Inflammatory</a></li>
+                    <li><a href="#" class="nav-link" data-section="planning">Meal Planning</a></li>
+               
+                </ul>
+                <button class="mobile-menu-btn">☰</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="main-content">
+            <main>
+              
+                <section id="home" class="content-section">
+                    <div class="section-header">Featured Brain-Healthy Foods</div>
+                    <div class="section-content">
+                        <article class="featured-article" data-article="blueberries">
+                            <img src="https://images.unsplash.com/photo-1498557850523-fd3d118b962e?w=800&h=400&fit=crop" alt="Fresh blueberries">
+                            <h3>Blueberries: The Ultimate Brain Superfood</h3>
+                            <p>Discover why blueberries are considered one of the most powerful brain foods, packed with antioxidants that can improve memory and cognitive function...</p>
+                            <div class="article-meta">Published: March 15, 2024 | Brain Nutrition</div>
+                        </article>
+
+                        <div class="articles-grid">
+                            <article class="article-card" data-article="salmon">
+                                <img src="https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=400&h=300&fit=crop" alt="Grilled salmon">
+                                <div class="article-card-content">
+                                    <h4>Wild Salmon: Omega-3 Powerhouse</h4>
+                                    <p>Learn how wild salmon's omega-3 fatty acids support brain health and protect against cognitive decline.</p>
+                                </div>
+                            </article>
+
+                            <article class="article-card" data-article="walnuts">
+                                <img src="https://media.gettyimages.com/id/108615541/photo/walnuts.jpg?s=612x612&w=gi&k=20&c=MfuxuhPhTxaxOPqSt6PIB7YXQI9Me_N6HMn1F1ctqMI=" alt="Walnuts">
+                                <div class="article-card-content">
+                                    <h4>Walnuts: Brain-Shaped Brain Food</h4>
+                                    <p>Explore the science behind walnuts and their remarkable ability to enhance cognitive performance.</p>
+                                </div>
+                            </article>
+
+                            <article class="article-card" data-article="avocado">
+                                <img src="https://images.unsplash.com/photo-1523049673857-eb18f1d7b578?w=400&h=300&fit=crop" alt="Fresh avocado">
+                                <div class="article-card-content">
+                                    <h4>Avocados: Healthy Fats for Sharp Minds</h4>
+                                    <p>Understand how avocados' monounsaturated fats improve blood flow to the brain.</p>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </section>
+
+                
+                <section id="antioxidants" class="content-section" style="display: none;">
+                    <div class="section-header">Antioxidant-Rich Brain Foods</div>
+                    <div class="section-content">
+                        <div class="articles-grid">
+                            <article class="article-card" data-article="darkchocolate">
+                                <img src="https://images.unsplash.com/photo-1511381939415-e44015466834?w=400&h=300&fit=crop" alt="Dark chocolate">
+                                <div class="article-card-content">
+                                    <h4>Dark Chocolate: Sweet Brain Protection</h4>
+                                    <p>Discover how dark chocolate's flavonoids can improve memory and focus.</p>
+                                </div>
+                            </article>
+
+                            <article class="article-card" data-article="spinach">
+                                <img src="https://images.unsplash.com/photo-1576045057995-568f588f82fb?w=400&h=300&fit=crop" alt="Fresh spinach">
+                                <div class="article-card-content">
+                                    <h4>Spinach: Iron-Rich Brain Booster</h4>
+                                    <p>Learn how spinach's nutrients support cognitive function and mental clarity.</p>
+                                </div>
+                            </article>
+
+                            <article class="article-card" data-article="berries">
+                                <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop" alt="Mixed berries">
+                                <div class="article-card-content">
+                                    <h4>Mixed Berries: Antioxidant Powerhouse</h4>
+                                    <p>Explore the brain benefits of strawberries, blackberries, and raspberries.</p>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </section>
+
+               
+                <section id="omega3" class="content-section" style="display: none;">
+                    <div class="section-header">Omega-3 Rich Foods for Brain Health</div>
+                    <div class="section-content">
+                        <div class="articles-grid">
+                            <article class="article-card" data-article="sardines">
+                                <img src="https://images.unsplash.com/photo-1544943910-4c1dc44aab44?w=400&h=300&fit=crop" alt="Sardines">
+                                <div class="article-card-content">
+                                    <h4>Sardines: Small Fish, Big Brain Benefits</h4>
+                                    <p>Why these tiny fish pack a powerful punch for cognitive health.</p>
+                                </div>
+                            </article>
+
+                            <article class="article-card" data-article="flaxseeds">
+                                <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=300&fit=crop" alt="Flax seeds">
+                                <div class="article-card-content">
+                                    <h4>Flax Seeds: Plant-Based Omega-3s</h4>
+                                    <p>The vegetarian source of essential fatty acids for brain health.</p>
+                                </div>
+                            </article>
+
+                            <article class="article-card" data-article="chiaseeds">
+                                <img src="https://www.drweil.com/wp-content/uploads/2018/05/Can-Chia-Help-With-Weight-Loss_-531657339-600x450.jpg" alt="Chia seeds">
+                                <div class="article-card-content">
+                                    <h4>Chia Seeds: Ancient Brain Food</h4>
+                                    <p>How these tiny seeds can boost your cognitive performance.</p>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="memory" class="content-section" style="display: none;">
+                    <div class="section-header">Memory-Boosting Foods</div>
+                    <div class="section-content">
+                        <div class="articles-grid">
+                            <article class="article-card" data-article="eggs">
+                                <img src="https://images.unsplash.com/photo-1582722872445-44dc5f7e3c8f?w=400&h=300&fit=crop" alt="Fresh eggs">
+                                <div class="article-card-content">
+                                    <h4>Eggs: Choline for Memory Formation</h4>
+                                    <p>Discover how eggs provide choline, essential for memory and brain development.</p>
+                                </div>
+                            </article>
+
+                            <article class="article-card" data-article="broccoli">
+                                <img src="https://images.unsplash.com/photo-1459411621453-7b03977f4bfc?w=400&h=300&fit=crop" alt="Fresh broccoli">
+                                <div class="article-card-content">
+                                    <h4>Broccoli: Vitamin K for Sharp Memory</h4>
+                                    <p>Learn how broccoli's vitamin K supports memory and cognitive function.</p>
+                                </div>
+                            </article>
+
+                            <article class="article-card" data-article="turmeric">
+                                <img src="https://images.unsplash.com/photo-1615485500704-8e990f9900f7?w=400&h=300&fit=crop" alt="Turmeric powder">
+                                <div class="article-card-content">
+                                    <h4>Turmeric: Golden Spice for Memory</h4>
+                                    <p>Explore how curcumin in turmeric enhances memory and brain health.</p>
+                                </div>
+                            </article>
+
+                            <article class="article-card" data-article="greentea">
+                                <img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=400&h=300&fit=crop" alt="Green tea">
+                                <div class="article-card-content">
+                                    <h4>Green Tea: L-Theanine for Focus</h4>
+                                    <p>Understand how green tea improves memory and concentration.</p>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="inflammation" class="content-section" style="display: none;">
+                    <div class="section-header">Anti-Inflammatory Brain Foods</div>
+                    <div class="section-content">
+                        <div class="articles-grid">
+                            <article class="article-card" data-article="oliveoil">
+                                <img src="https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=400&h=300&fit=crop" alt="Olive oil">
+                                <div class="article-card-content">
+                                    <h4>Extra Virgin Olive Oil: Brain Protection</h4>
+                                    <p>Learn how olive oil's compounds fight brain inflammation.</p>
+                                </div>
+                            </article>
+
+                            <article class="article-card" data-article="tomatoes">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSY3dnifdWPJp_EthTgj_mnSnt9wuVakCiXWw&s" alt="Fresh tomatoes">
+                                <div class="article-card-content">
+                                    <h4>Tomatoes: Lycopene for Brain Health</h4>
+                                    <p>Discover how lycopene in tomatoes reduces brain inflammation.</p>
+                                </div>
+                            </article>
+
+                            <article class="article-card" data-article="ginger">
+                                <img src="https://images.unsplash.com/photo-1615485290382-441e4d049cb5?w=400&h=300&fit=crop" alt="Fresh ginger">
+                                <div class="article-card-content">
+                                    <h4>Ginger: Natural Anti-Inflammatory</h4>
+                                    <p>Explore ginger's powerful anti-inflammatory effects on the brain.</p>
+                                </div>
+                            </article>
+
+                            <article class="article-card" data-article="cherries">
+                                <img src="https://images.unsplash.com/photo-1528821128474-27f963b062bf?w=400&h=300&fit=crop" alt="Fresh cherries">
+                                <div class="article-card-content">
+                                    <h4>Tart Cherries: Sleep and Brain Recovery</h4>
+                                    <p>Learn how tart cherries support brain recovery and reduce inflammation.</p>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="planning" class="content-section" style="display: none;">
+                    <div class="section-header">Brain-Healthy Meal Planning</div>
+                    <div class="section-content">
+                        <div class="articles-grid">
+                            <article class="article-card" data-article="breakfast">
+                                <img src="https://images.unsplash.com/photo-1484723091739-30a097e8f929?w=400&h=300&fit=crop" alt="Healthy breakfast">
+                                <div class="article-card-content">
+                                    <h4>Brain-Boosting Breakfast Ideas</h4>
+                                    <p>Start your day with meals that fuel your brain for optimal performance.</p>
+                                </div>
+                            </article>
+
+                            <article class="article-card" data-article="snacks">
+                                <img src="https://images.unsplash.com/photo-1559181567-c3190ca9959b?w=400&h=300&fit=crop" alt="Healthy snacks">
+                                <div class="article-card-content">
+                                    <h4>Smart Snacks for Mental Clarity</h4>
+                                    <p>Discover brain-healthy snacks that maintain focus throughout the day.</p>
+                                </div>
+                            </article>
+
+                            <article class="article-card" data-article="mealprep">
+                                <img src="https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=400&h=300&fit=crop" alt="Meal prep containers">
+                                <div class="article-card-content">
+                                    <h4>Weekly Brain Food Meal Prep</h4>
+                                    <p>Plan and prepare brain-healthy meals for the entire week.</p>
+                                </div>
+                            </article>
+
+                            <article class="article-card" data-article="supplements">
+                                <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=300&fit=crop" alt="Natural supplements">
+                                <div class="article-card-content">
+                                    <h4>Natural Brain Supplements vs. Food</h4>
+                                    <p>Compare whole foods to supplements for optimal brain nutrition.</p>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </section>
+            </main>
+
+            <aside class="sidebar">
+                <div class="sidebar-section">
+                    <div class="sidebar-header">Latest Brain Health News</div>
+                    <div class="sidebar-content">
+                        <div class="news-item">
+                            <a href="https://www.healthline.com/nutrition/11-brain-foods" target="_blank">Mediterranean Diet Reduces Alzheimer's Risk by 40%</a>
+                            <div class="news-date">March 20, 2024</div>
+                        </div>
+                        <div class="news-item">
+                            <a href="https://www.mayoclinic.org/healthy-lifestyle/nutrition-and-healthy-eating/in-depth/health-tip/art-20049297" target="_blank">New Study: Green Tea Improves Working Memory</a>
+                            <div class="news-date">March 18, 2024</div>
+                        </div>
+                        <div class="news-item">
+                            <a href="https://www.webmd.com/diet/features/eat-smart-healthier-brain" target="_blank">Turmeric Shows Promise in Fighting Brain Inflammation</a>
+                            <div class="news-date">March 15, 2024</div>
+                        </div>
+                        <div class="news-item">
+                            <a href="https://www.harvard.edu/blog/nutritional-psychiatry-your-brain-on-food-201511168626" target="_blank">Coffee Consumption Linked to Lower Dementia Risk</a>
+                            <div class="news-date">March 12, 2024</div>
+                        </div>
+                        <div class="news-item">
+                            <a href="https://www.nutrition.gov/topics/life-stage/adults/older-adults" target="_blank">Intermittent Fasting May Boost Brain Function</a>
+                            <div class="news-date">March 10, 2024</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sidebar-section">
+                    <div class="sidebar-header">Brain Health Newsletter</div>
+                    <div class="sidebar-content">
+                        <p>Get weekly tips on brain-healthy foods and recipes delivered to your inbox!</p>
+                        <form class="newsletter-form">
+                            <input type="email" class="newsletter-input" placeholder="Enter your email">
+                            <button type="submit" class="newsletter-btn">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="sidebar-section">
+                    <div class="sidebar-header">Quick Brain Food Tips</div>
+                    <div class="sidebar-content">
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="margin: 10px 0; padding: 10px; background: #f0f8f0; border-radius: 5px;">🥜 Eat a handful of nuts daily</li>
+                            <li style="margin: 10px 0; padding: 10px; background: #f0f8f0; border-radius: 5px;">🐟 Include fatty fish twice a week</li>
+                            <li style="margin: 10px 0; padding: 10px; background: #f0f8f0; border-radius: 5px;">🫐 Add berries to your breakfast</li>
+                            <li style="margin: 10px 0; padding: 10px; background: #f0f8f0; border-radius: 5px;">🥬 Eat leafy greens daily</li>
+                        </ul>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <div id="articleModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close">&times;</span>
+                <h2 id="modalTitle">Article Title</h2>
+            </div>
+            <div class="modal-body" id="modalBody">
+                 Article content will be inserted here 
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Brain Food Categories</h4>
+                    <a href="#">Antioxidant Foods</a>
+                    <a href="#">Omega-3 Sources</a>
+                    <a href="#">Memory Boosters</a>
+                    <a href="#">Anti-Inflammatory Foods</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <a href="#">Meal Planning Guide</a>
+                    <a href="#">Recipe Collection</a>
+                    <a href="#">Nutrition Calculator</a>
+                    <a href="#">Shopping Lists</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Rech out us </h4>
+                    <!-- <a href="#">Our Mission</a> -->
+                    <a href="about.html">About Us</a>
+                    <a href="contact.html">Contact Us</a>
+                    <a href="privacy.html">Privacy Policy</a>
+                </div>
+            </div>
+            <p>&copy; 2025 Brain Food Hub. All rights reserved. | Promoting cognitive wellness through nutrition.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Article content data
+        const articleContent = {
+            blueberries: {
+                title: "Blueberries: The Ultimate Brain Superfood",
+                content: `
+                    <p>Blueberries are often called "brain berries" for good reason. These small, vibrant fruits are packed with powerful compounds that can significantly boost your cognitive function and protect your brain from age-related decline.</p>
+                    
+                    <h3>The Science Behind Blueberries</h3>
+                    <p>Blueberries contain high levels of anthocyanins, powerful antioxidants that give them their deep blue color. These compounds can cross the blood-brain barrier and accumulate in brain regions associated with learning and memory.</p>
+                    
+                    <h3>Key Brain Benefits:</h3>
+                    <ul>
+                        <li><strong>Improved Memory:</strong> Studies show that eating blueberries can improve both short-term and long-term memory</li>
+                        <li><strong>Enhanced Focus:</strong> The antioxidants in blueberries help improve concentration and mental clarity</li>
+                        <li><strong>Neuroprotection:</strong> Regular consumption may help protect against neurodegenerative diseases</li>
+                        <li><strong>Better Communication:</strong> Blueberries help improve communication between brain cells</li>
+                    </ul>
+                    
+                    <h3>How to Include Blueberries in Your Diet:</h3>
+                    <ul>
+                        <li>Add fresh blueberries to your morning cereal or yogurt</li>
+                        <li>Blend them into smoothies for a brain-boosting drink</li>
+                        <li>Eat them as a healthy snack between meals</li>
+                        <li>Include them in salads for a sweet, nutritious addition</li>
+                    </ul>
+                    
+                    <p>Aim for at least 1/2 cup of blueberries daily to maximize their brain-boosting benefits. Fresh or frozen blueberries are equally nutritious, making them accessible year-round.</p>
+                `
+            },
+            salmon: {
+                title: "Wild Salmon: Omega-3 Powerhouse for Brain Health",
+                content: `
+                    <p>Wild salmon is one of the best sources of omega-3 fatty acids, particularly DHA (docosahexaenoic acid), which is crucial for brain health and cognitive function.</p>
+                    
+                    <h3>Why Omega-3s Matter for Your Brain:</h3>
+                    <p>DHA makes up about 40% of the polyunsaturated fatty acids in your brain. It's essential for maintaining the structure and function of brain cells, supporting memory, and protecting against cognitive decline.</p>
+                    
+                    <h3>Brain Benefits of Wild Salmon:</h3>
+                    <ul>
+                        <li><strong>Memory Enhancement:</strong> DHA supports the formation of new memories</li>
+                        <li><strong>Mood Regulation:</strong> Omega-3s help regulate neurotransmitters that affect mood</li>
+                        <li><strong>Reduced Inflammation:</strong> Anti-inflammatory properties protect brain cells</li>
+                        <li><strong>Cognitive Protection:</strong> May reduce risk of Alzheimer's and dementia</li>
+                    </ul>
+                    
+                    <h3>Choosing the Right Salmon:</h3>
+                    <ul>
+                        <li>Wild-caught salmon has higher omega-3 content than farmed</li>
+                        <li>Sockeye, King, and Coho salmon are excellent choices</li>
+                        <li>Canned wild salmon is a convenient, affordable option</li>
+                    </ul>
+                    
+                    <p>Aim to eat fatty fish like salmon at least twice a week to meet your omega-3 needs for optimal brain health.</p>
+                `
+            },
+            walnuts: {
+                title: "Walnuts: Nature's Brain-Shaped Brain Food",
+                content: `
+                    <p>It's no coincidence that walnuts look like tiny brains – they're one of the best nuts for cognitive health, packed with nutrients that support brain function and protect against age-related decline.</p>
+                    
+                    <h3>Nutritional Profile:</h3>
+                    <p>Walnuts are rich in alpha-linolenic acid (ALA), a plant-based omega-3 fatty acid, along with vitamin E, folate, and antioxidants that specifically benefit brain health.</p>
+                    
+                    <h3>Cognitive Benefits:</h3>
+                    <ul>
+                        <li><strong>Improved Memory:</strong> Studies show regular walnut consumption enhances memory performance</li>
+                        <li><strong>Better Processing Speed:</strong> Walnuts help improve information processing speed</li>
+                        <li><strong>Enhanced Learning:</strong> The omega-3s support new neural pathway formation</li>
+                        <li><strong>Mood Support:</strong> May help reduce symptoms of depression and anxiety</li>
+                    </ul>
+                    
+                    <h3>Research Findings:</h3>
+                    <p>A study published in the Journal of Nutrition found that adults who consumed walnuts performed significantly better on cognitive tests, regardless of age, gender, or ethnicity.</p>
+                    
+                    <h3>How to Enjoy Walnuts:</h3>
+                    <ul>
+                        <li>Eat a handful (about 1 ounce) as a daily snack</li>
+                        <li>Add chopped walnuts to salads and yogurt</li>
+                        <li>Include them in homemade trail mix</li>
+                        <li>Use walnut oil in salad dressings</li>
+                    </ul>
+                `
+            },
+            avocado: {
+                title: "Avocados: Healthy Fats for Sharp Minds",
+                content: `
+                    <p>Avocados are rich in monounsaturated fats that support healthy blood flow to the brain, making them an excellent food for cognitive function and mental clarity.</p>
+                    
+                    <h3>Brain-Boosting Nutrients:</h3>
+                    <ul>
+                        <li><strong>Monounsaturated Fats:</strong> Support healthy blood flow and reduce blood pressure</li>
+                        <li><strong>Vitamin K:</strong> Important for cognitive function and memory</li>
+                        <li><strong>Folate:</strong> Supports brain development and function</li>
+                        <li><strong>Vitamin E:</strong> Protects brain cells from oxidative stress</li>
+                    </ul>
+                    
+                    <h3>How Avocados Help Your Brain:</h3>
+                    <ul>
+                        <li>Improve blood flow to the brain</li>
+                        <li>Support the absorption of fat-soluble vitamins</li>
+                        <li>Help maintain healthy cholesterol levels</li>
+                        <li>Provide steady energy for brain function</li>
+                    </ul>
+                    
+                    <h3>Daily Serving Suggestions:</h3>
+                    <p>Half an avocado daily provides optimal benefits. Try it on toast, in smoothies, salads, or as guacamole with vegetables.</p>
+                `
+            },
+            darkchocolate: {
+                title: "Dark Chocolate: Sweet Brain Protection",
+                content: `
+                    <p>Dark chocolate (70% cacao or higher) contains flavonoids, caffeine, and antioxidants that can improve various aspects of brain function, making it a delicious brain food.</p>
+                    
+                    <h3>Active Compounds:</h3>
+                    <ul>
+                        <li><strong>Flavonoids:</strong> Improve memory and cognitive function</li>
+                        <li><strong>Caffeine:</strong> Enhances focus and alertness</li>
+                        <li><strong>Theobromine:</strong> Improves mood and cognitive performance</li>
+                    </ul>
+                    
+                    <h3>Brain Benefits:</h3>
+                    <ul>
+                        <li>Enhanced memory and learning</li>
+                        <li>Improved focus and concentration</li>
+                        <li>Better mood and reduced stress</li>
+                        <li>Increased blood flow to the brain</li>
+                    </ul>
+                    
+                    <p>Enjoy 1-2 squares of dark chocolate daily for optimal brain benefits without excess calories.</p>
+                `
+            },
+            spinach: {
+                title: "Spinach: Iron-Rich Brain Booster",
+                content: `
+                    <p>Spinach is a nutritional powerhouse packed with brain-boosting nutrients including iron, folate, vitamin K, and antioxidants that support cognitive function and mental clarity.</p>
+                    
+                    <h3>Key Nutrients for Brain Health:</h3>
+                    <ul>
+                        <li><strong>Iron:</strong> Essential for oxygen transport to the brain</li>
+                        <li><strong>Folate:</strong> Supports neurotransmitter production and brain development</li>
+                        <li><strong>Vitamin K:</strong> Important for cognitive function and memory</li>
+                        <li><strong>Lutein:</strong> Protects against age-related cognitive decline</li>
+                    </ul>
+                    
+                    <h3>Cognitive Benefits:</h3>
+                    <ul>
+                        <li>Improved memory and learning ability</li>
+                        <li>Enhanced focus and concentration</li>
+                        <li>Better information processing speed</li>
+                        <li>Protection against cognitive decline</li>
+                    </ul>
+                    
+                    <h3>How to Include Spinach:</h3>
+                    <ul>
+                        <li>Add fresh spinach to smoothies</li>
+                        <li>Include in salads and sandwiches</li>
+                        <li>Sauté as a side dish</li>
+                        <li>Add to soups and pasta dishes</li>
+                    </ul>
+                    
+                    <p>Aim for at least 1 cup of fresh spinach daily to maximize its brain-boosting benefits.</p>
+                `
+            },
+            berries: {
+                title: "Mixed Berries: Antioxidant Powerhouse",
+                content: `
+                    <p>Mixed berries including strawberries, blackberries, and raspberries are loaded with antioxidants, vitamins, and compounds that protect the brain and enhance cognitive function.</p>
+                    
+                    <h3>Antioxidant Profile:</h3>
+                    <ul>
+                        <li><strong>Anthocyanins:</strong> Improve memory and cognitive function</li>
+                        <li><strong>Vitamin C:</strong> Protects brain cells from oxidative stress</li>
+                        <li><strong>Ellagic Acid:</strong> Has neuroprotective properties</li>
+                        <li><strong>Quercetin:</strong> Reduces inflammation in the brain</li>
+                    </ul>
+                    
+                    <h3>Brain Benefits by Berry Type:</h3>
+                    <ul>
+                        <li><strong>Strawberries:</strong> High in vitamin C and folate for brain health</li>
+                        <li><strong>Blackberries:</strong> Rich in anthocyanins for memory enhancement</li>
+                        <li><strong>Raspberries:</strong> Contain ellagic acid for neuroprotection</li>
+                    </ul>
+                    
+                    <h3>Daily Recommendations:</h3>
+                    <p>Eat a variety of berries daily - aim for 1/2 to 1 cup mixed berries. Fresh, frozen, or dried (without added sugar) all provide benefits.</p>
+                    
+                    <p>Research shows that people who eat berries regularly have slower rates of cognitive decline and better memory performance as they age.</p>
+                `
+            },
+            sardines: {
+                title: "Sardines: Small Fish, Big Brain Benefits",
+                content: `
+                    <p>Sardines are one of the most nutrient-dense foods for brain health, packed with omega-3 fatty acids, protein, and essential vitamins that support cognitive function.</p>
+                    
+                    <h3>Nutritional Powerhouse:</h3>
+                    <ul>
+                        <li><strong>Omega-3 Fatty Acids:</strong> High in both DHA and EPA for brain health</li>
+                        <li><strong>Vitamin B12:</strong> Essential for nerve function and brain health</li>
+                        <li><strong>Vitamin D:</strong> Supports brain development and function</li>
+                        <li><strong>Selenium:</strong> Protects brain cells from oxidative damage</li>
+                    </ul>
+                    
+                    <h3>Brain Health Benefits:</h3>
+                    <ul>
+                        <li>Enhanced memory and learning</li>
+                        <li>Improved mood and reduced depression risk</li>
+                        <li>Protection against cognitive decline</li>
+                        <li>Better focus and concentration</li>
+                    </ul>
+                    
+                    <h3>Why Choose Sardines:</h3>
+                    <ul>
+                        <li>Low in mercury compared to larger fish</li>
+                        <li>Sustainable and environmentally friendly</li>
+                        <li>Affordable source of high-quality nutrition</li>
+                        <li>Convenient canned options available</li>
+                    </ul>
+                    
+                    <p>Include sardines in your diet 2-3 times per week for optimal brain health benefits. Try them on toast, in salads, or pasta dishes.</p>
+                `
+            },
+            flaxseeds: {
+                title: "Flax Seeds: Plant-Based Omega-3s",
+                content: `
+                    <p>Flax seeds are the richest plant-based source of alpha-linolenic acid (ALA), an omega-3 fatty acid that's essential for brain health and cognitive function.</p>
+                    
+                    <h3>Brain-Boosting Nutrients:</h3>
+                    <ul>
+                        <li><strong>ALA Omega-3s:</strong> Converted to DHA and EPA in the body</li>
+                        <li><strong>Lignans:</strong> Antioxidants that protect brain cells</li>
+                        <li><strong>Fiber:</strong> Supports gut-brain connection</li>
+                        <li><strong>Protein:</strong> Provides amino acids for neurotransmitters</li>
+                    </ul>
+                    
+                    <h3>Cognitive Benefits:</h3>
+                    <ul>
+                        <li>Improved memory and learning</li>
+                        <li>Enhanced mood and reduced anxiety</li>
+                        <li>Better focus and mental clarity</li>
+                        <li>Protection against age-related cognitive decline</li>
+                    </ul>
+                    
+                    <h3>How to Use Flax Seeds:</h3>
+                    <ul>
+                        <li>Grind fresh for better absorption</li>
+                        <li>Add to smoothies, yogurt, or oatmeal</li>
+                        <li>Use flax oil in salad dressings</li>
+                        <li>Include in baking recipes</li>
+                    </ul>
+                    
+                    <p>Aim for 1-2 tablespoons of ground flax seeds daily. Store in the refrigerator to maintain freshness and nutritional value.</p>
+                `
+            },
+            chiaseeds: {
+                title: "Chia Seeds: Ancient Brain Food",
+                content: `
+                    <p>Chia seeds are tiny nutritional powerhouses that have been valued for their brain-boosting properties since ancient times. They're packed with omega-3s, fiber, and protein.</p>
+                    
+                    <h3>Nutritional Profile:</h3>
+                    <ul>
+                        <li><strong>Omega-3 ALA:</strong> Plant-based fatty acids for brain health</li>
+                        <li><strong>Complete Protein:</strong> All essential amino acids</li>
+                        <li><strong>Fiber:</strong> Supports stable blood sugar and brain energy</li>
+                        <li><strong>Antioxidants:</strong> Protect brain cells from damage</li>
+                    </ul>
+                    
+                    <h3>Brain Health Benefits:</h3>
+                    <ul>
+                        <li>Sustained energy for brain function</li>
+                        <li>Improved focus and concentration</li>
+                        <li>Enhanced memory formation</li>
+                        <li>Reduced brain inflammation</li>
+                    </ul>
+                    
+                    <h3>Easy Ways to Enjoy Chia Seeds:</h3>
+                    <ul>
+                        <li>Make chia pudding with milk and fruit</li>
+                        <li>Add to smoothies for extra nutrition</li>
+                        <li>Sprinkle on yogurt or cereal</li>
+                        <li>Use as an egg substitute in baking</li>
+                    </ul>
+                    
+                    <p>Just 1-2 tablespoons of chia seeds daily provides significant brain health benefits. They expand when mixed with liquid, creating a satisfying, nutrient-dense food.</p>
+                `
+            },
+            eggs: {
+                title: "Eggs: Choline for Memory Formation",
+                content: `
+                    <p>Eggs are one of the best dietary sources of choline, a nutrient that's crucial for brain development, memory formation, and cognitive function throughout life.</p>
+                    
+                    <h3>Choline and Brain Health:</h3>
+                    <p>Choline is used to produce acetylcholine, a neurotransmitter involved in memory and learning. It's also essential for maintaining the structure of brain cell membranes.</p>
+                    
+                    <h3>Memory Benefits:</h3>
+                    <ul>
+                        <li><strong>Enhanced Memory Formation:</strong> Choline supports the creation of new memories</li>
+                        <li><strong>Improved Recall:</strong> Regular choline intake helps with memory retrieval</li>
+                        <li><strong>Brain Development:</strong> Essential during pregnancy and early childhood</li>
+                        <li><strong>Cognitive Protection:</strong> May help prevent age-related memory decline</li>
+                    </ul>
+                    
+                    <h3>Nutritional Profile:</h3>
+                    <ul>
+                        <li>One large egg provides about 147mg of choline (27% of daily needs)</li>
+                        <li>High-quality complete protein for brain function</li>
+                        <li>Vitamin B12 for nerve health</li>
+                        <li>Selenium for antioxidant protection</li>
+                    </ul>
+                    
+                    <p>Include 1-2 eggs daily in your diet. The yolk contains the highest concentration of choline, so don't skip it!</p>
+                `
+            },
+            broccoli: {
+                title: "Broccoli: Vitamin K for Sharp Memory",
+                content: `
+                    <p>Broccoli is a nutritional powerhouse that's particularly rich in vitamin K, a nutrient that's essential for brain health and cognitive function.</p>
+                    
+                    <h3>Vitamin K and Brain Function:</h3>
+                    <p>Vitamin K is involved in the synthesis of sphingolipids, a type of fat that's densely packed into brain cells. It also has anti-inflammatory properties that protect the brain.</p>
+                    
+                    <h3>Cognitive Benefits:</h3>
+                    <ul>
+                        <li><strong>Enhanced Memory:</strong> Vitamin K supports memory formation and recall</li>
+                        <li><strong>Improved Processing Speed:</strong> Helps with faster information processing</li>
+                        <li><strong>Neuroprotection:</strong> Antioxidants protect against brain cell damage</li>
+                        <li><strong>Anti-inflammatory:</strong> Reduces brain inflammation</li>
+                    </ul>
+                    
+                    <h3>Additional Brain Nutrients in Broccoli:</h3>
+                    <ul>
+                        <li>Vitamin C for antioxidant protection</li>
+                        <li>Folate for neurotransmitter production</li>
+                        <li>Sulforaphane for brain detoxification</li>
+                        <li>Fiber for gut-brain health</li>
+                    </ul>
+                    
+                    <p>Aim for 1-2 cups of broccoli several times per week. Steam lightly to preserve nutrients, or enjoy raw in salads.</p>
+                `
+            },
+            turmeric: {
+                title: "Turmeric: Golden Spice for Memory",
+                content: `
+                    <p>Turmeric contains curcumin, a powerful compound that has been shown to cross the blood-brain barrier and provide significant benefits for memory and overall brain health.</p>
+                    
+                    <h3>Curcumin's Brain Benefits:</h3>
+                    <ul>
+                        <li><strong>Memory Enhancement:</strong> Studies show improved working memory</li>
+                        <li><strong>Mood Support:</strong> May help reduce symptoms of depression</li>
+                        <li><strong>Neuroprotection:</strong> Protects against neurodegenerative diseases</li>
+                        <li><strong>Anti-inflammatory:</strong> Reduces brain inflammation</li>
+                    </ul>
+                    
+                    <h3>Research Findings:</h3>
+                    <p>A study found that people who took curcumin supplements showed improved memory performance and had less accumulation of amyloid plaques in brain regions associated with Alzheimer's disease.</p>
+                    
+                    <h3>How to Use Turmeric:</h3>
+                    <ul>
+                        <li>Add to curries, soups, and stews</li>
+                        <li>Make golden milk with turmeric and black pepper</li>
+                        <li>Include in smoothies for a brain boost</li>
+                        <li>Use in salad dressings and marinades</li>
+                    </ul>
+                    
+                    <p>Combine turmeric with black pepper to increase curcumin absorption by up to 2000%. Aim for 1/2 to 1 teaspoon daily.</p>
+                `
+            },
+            greentea: {
+                title: "Green Tea: L-Theanine for Focus",
+                content: `
+                    <p>Green tea contains a unique combination of caffeine and L-theanine that provides sustained focus and improved cognitive performance without the jitters.</p>
+                    
+                    <h3>Active Compounds:</h3>
+                    <ul>
+                        <li><strong>L-Theanine:</strong> Promotes calm alertness and focus</li>
+                        <li><strong>Caffeine:</strong> Enhances attention and reaction time</li>
+                        <li><strong>EGCG:</strong> Powerful antioxidant that protects brain cells</li>
+                        <li><strong>Catechins:</strong> Support overall brain health</li>
+                    </ul>
+                    
+                    <h3>Cognitive Benefits:</h3>
+                    <ul>
+                        <li>Improved focus and concentration</li>
+                        <li>Enhanced working memory</li>
+                        <li>Reduced mental fatigue</li>
+                        <li>Better mood and reduced anxiety</li>
+                    </ul>
+                    
+                    <h3>The L-Theanine Advantage:</h3>
+                    <p>L-theanine promotes alpha brain waves, which are associated with relaxed alertness. This creates a state of calm focus that's ideal for learning and productivity.</p>
+                    
+                    <p>Drink 2-3 cups of green tea daily for optimal brain benefits. Choose high-quality loose leaf tea for maximum nutrient content.</p>
+                `
+            },
+            oliveoil: {
+                title: "Extra Virgin Olive Oil: Brain Protection",
+                content: `
+                    <p>Extra virgin olive oil is rich in monounsaturated fats and antioxidants that protect the brain from inflammation and support cognitive function.</p>
+                    
+                    <h3>Brain-Protective Compounds:</h3>
+                    <ul>
+                        <li><strong>Oleic Acid:</strong> Reduces brain inflammation</li>
+                        <li><strong>Vitamin E:</strong> Protects brain cells from oxidative damage</li>
+                        <li><strong>Polyphenols:</strong> Powerful antioxidants for neuroprotection</li>
+                        <li><strong>Oleocanthal:</strong> Has anti-inflammatory properties similar to ibuprofen</li>
+                    </ul>
+                    
+                    <h3>Cognitive Benefits:</h3>
+                    <ul>
+                        <li>Reduced risk of cognitive decline</li>
+                        <li>Improved memory and learning</li>
+                        <li>Protection against neurodegenerative diseases</li>
+                        <li>Enhanced mood and reduced depression risk</li>
+                    </ul>
+                    
+                    <h3>Mediterranean Diet Connection:</h3>
+                    <p>Olive oil is a key component of the Mediterranean diet, which has been associated with better cognitive function and reduced risk of Alzheimer's disease.</p>
+                    
+                    <p>Use 2-3 tablespoons of extra virgin olive oil daily in cooking, salad dressings, or drizzled over vegetables.</p>
+                `
+            },
+            tomatoes: {
+                title: "Tomatoes: Lycopene for Brain Health",
+                content: `
+                    <p>Tomatoes are rich in lycopene, a powerful antioxidant that gives them their red color and provides significant benefits for brain health and cognitive function.</p>
+                    
+                    <h3>Lycopene's Brain Benefits:</h3>
+                    <ul>
+                        <li><strong>Antioxidant Protection:</strong> Protects brain cells from free radical damage</li>
+                        <li><strong>Anti-inflammatory:</strong> Reduces inflammation in the brain</li>
+                        <li><strong>Improved Blood Flow:</strong> Supports healthy circulation to the brain</li>
+                        <li><strong>Neuroprotection:</strong> May help prevent neurodegenerative diseases</li>
+                    </ul>
+                    
+                    <h3>Research Findings:</h3>
+                    <p>Studies suggest that higher lycopene intake is associated with better cognitive performance and reduced risk of stroke and dementia.</p>
+                    
+                    <h3>Maximizing Lycopene Absorption:</h3>
+                    <ul>
+                        <li>Cook tomatoes to increase lycopene availability</li>
+                        <li>Combine with healthy fats like olive oil</li>
+                        <li>Choose deep red, ripe tomatoes</li>
+                        <li>Include tomato paste and sauce in your diet</li>
+                    </ul>
+                    
+                    <p>Include tomatoes in your daily diet through sauces, soups, salads, and cooked dishes for optimal brain health benefits.</p>
+                `
+            },
+            ginger: {
+                title: "Ginger: Natural Anti-Inflammatory",
+                content: `
+                    <p>Ginger contains powerful anti-inflammatory compounds called gingerols that can help reduce brain inflammation and support cognitive function.</p>
+                    
+                    <h3>Active Compounds:</h3>
+                    <ul>
+                        <li><strong>Gingerols:</strong> Primary anti-inflammatory compounds</li>
+                        <li><strong>Shogaols:</strong> Formed when ginger is dried or cooked</li>
+                        <li><strong>Zingerone:</strong> Provides antioxidant benefits</li>
+                    </ul>
+                    
+                    <h3>Brain Health Benefits:</h3>
+                    <ul>
+                        <li>Reduced brain inflammation</li>
+                        <li>Improved memory and cognitive function</li>
+                        <li>Enhanced focus and attention</li>
+                        <li>Protection against age-related cognitive decline</li>
+                    </ul>
+                    
+                    <h3>Research Evidence:</h3>
+                    <p>Studies have shown that ginger supplementation can improve working memory and attention in middle-aged women, and may help protect against neurodegenerative diseases.</p>
+                    
+                    <h3>How to Include Ginger:</h3>
+                    <ul>
+                        <li>Fresh ginger in smoothies and juices</li>
+                        <li>Ginger tea for daily consumption</li>
+                        <li>Add to stir-fries and curries</li>
+                        <li>Use in salad dressings and marinades</li>
+                    </ul>
+                    
+                    <p>Aim for 1-2 grams of fresh ginger daily, or 1/4 teaspoon of dried ginger powder for optimal anti-inflammatory benefits.</p>
+                `
+            },
+            cherries: {
+                title: "Tart Cherries: Sleep and Brain Recovery",
+                content: `
+                    <p>Tart cherries are one of the few natural sources of melatonin and are rich in antioxidants that support brain recovery and reduce inflammation.</p>
+                    
+                    <h3>Brain-Supporting Compounds:</h3>
+                    <ul>
+                        <li><strong>Melatonin:</strong> Natural sleep hormone for brain recovery</li>
+                        <li><strong>Anthocyanins:</strong> Antioxidants that reduce inflammation</li>
+                        <li><strong>Quercetin:</strong> Flavonoid with neuroprotective properties</li>
+                        <li><strong>Vitamin C:</strong> Supports neurotransmitter production</li>
+                    </ul>
+                    
+                    <h3>Sleep and Brain Connection:</h3>
+                    <p>Quality sleep is essential for brain health, memory consolidation, and toxin removal. Tart cherries naturally support healthy sleep patterns.</p>
+                    
+                    <h3>Cognitive Benefits:</h3>
+                    <ul>
+                        <li>Improved sleep quality for better brain recovery</li>
+                        <li>Reduced brain inflammation</li>
+                        <li>Enhanced memory consolidation during sleep</li>
+                        <li>Better mood and cognitive performance</li>
+                    </ul>
+                    
+                    <h3>How to Enjoy Tart Cherries:</h3>
+                    <ul>
+                        <li>Drink tart cherry juice 1-2 hours before bed</li>
+                        <li>Add dried tart cherries to trail mix</li>
+                        <li>Include fresh cherries in smoothies</li>
+                        <li>Use in baking and desserts</li>
+                    </ul>
+                    
+                    <p>Studies suggest drinking 8 ounces of tart cherry juice daily can improve sleep quality and duration, leading to better brain function.</p>
+                `
+            },
+            breakfast: {
+                title: "Brain-Boosting Breakfast Ideas",
+                content: `
+                    <p>Starting your day with brain-healthy foods sets the foundation for optimal cognitive performance throughout the day. Here are nutritious breakfast ideas that fuel your brain.</p>
+                    
+                    <h3>Power Breakfast Components:</h3>
+                    <ul>
+                        <li><strong>Protein:</strong> Eggs, Greek yogurt, nuts for sustained energy</li>
+                        <li><strong>Healthy Fats:</strong> Avocado, nuts, seeds for brain function</li>
+                        <li><strong>Complex Carbs:</strong> Oatmeal, whole grains for steady glucose</li>
+                        <li><strong>Antioxidants:</strong> Berries, dark leafy greens for protection</li>
+                    </ul>
+                    
+                    <h3>Brain-Boosting Breakfast Ideas:</h3>
+                    <ul>
+                        <li><strong>Blueberry Walnut Oatmeal:</strong> Steel-cut oats with blueberries, walnuts, and cinnamon</li>
+                        <li><strong>Avocado Egg Toast:</strong> Whole grain toast with avocado and poached egg</li>
+                        <li><strong>Brain Smoothie:</strong> Spinach, berries, Greek yogurt, and flax seeds</li>
+                        <li><strong>Chia Pudding:</strong> Chia seeds with almond milk, berries, and nuts</li>
+                    </ul>
+                    
+                    <h3>Timing and Portions:</h3>
+                    <p>Eat breakfast within 2 hours of waking to stabilize blood sugar and provide steady energy for your brain. Include 20-30g of protein for optimal cognitive function.</p>
+                    
+                    <p>Avoid sugary cereals and pastries that cause blood sugar spikes and crashes, leading to poor concentration and mental fatigue.</p>
+                `
+            },
+            snacks: {
+                title: "Smart Snacks for Mental Clarity",
+                content: `
+                    <p>The right snacks can maintain steady blood sugar levels and provide nutrients that support sustained mental clarity and focus throughout the day.</p>
+                    
+                    <h3>Brain-Healthy Snack Principles:</h3>
+                    <ul>
+                        <li>Combine protein with healthy fats</li>
+                        <li>Include antioxidant-rich foods</li>
+                        <li>Avoid processed sugars and refined carbs</li>
+                        <li>Stay hydrated with water or herbal tea</li>
+                    </ul>
+                    
+                    <h3>Top Brain Snacks:</h3>
+                    <ul>
+                        <li><strong>Mixed Nuts:</strong> Walnuts, almonds, and pistachios for omega-3s and protein</li>
+                        <li><strong>Apple with Almond Butter:</strong> Fiber, healthy fats, and sustained energy</li>
+                        <li><strong>Greek Yogurt with Berries:</strong> Protein and antioxidants</li>
+                        <li><strong>Dark Chocolate (70%+):</strong> Flavonoids for cognitive enhancement</li>
+                        <li><strong>Hummus with Vegetables:</strong> Protein and brain-supporting nutrients</li>
+                    </ul>
+                    
+                    <h3>Snacking Schedule:</h3>
+                    <p>Eat a brain-healthy snack every 3-4 hours to maintain steady blood sugar and optimal brain function. Time snacks between meals to avoid energy crashes.</p>
+                    
+                    <p>Keep portion sizes moderate (150-200 calories) to avoid sluggishness while providing sustained mental energy.</p>
+                `
+            },
+            mealprep: {
+                title: "Weekly Brain Food Meal Prep",
+                content: `
+                    <p>Meal prepping brain-healthy foods ensures you always have nutritious options available, making it easier to maintain consistent cognitive performance throughout the week.</p>
+                    
+                    <h3>Meal Prep Basics:</h3>
+                    <ul>
+                        <li>Plan meals around brain-healthy ingredients</li>
+                        <li>Prepare proteins, grains, and vegetables in batches</li>
+                        <li>Store foods properly to maintain nutrients</li>
+                        <li>Include variety to prevent boredom</li>
+                    </ul>
+                    
+                    <h3>Brain Food Prep Ideas:</h3>
+                    <ul>
+                        <li><strong>Protein Prep:</strong> Hard-boiled eggs, grilled salmon, baked chicken</li>
+                        <li><strong>Grain Prep:</strong> Quinoa, brown rice, steel-cut oats</li>
+                        <li><strong>Vegetable Prep:</strong> Roasted broccoli, steamed spinach, raw vegetables</li>
+                        <li><strong>Snack Prep:</strong> Portion nuts, wash berries, make energy balls</li>
+                    </ul>
+                    
+                    <h3>Weekly Meal Prep Schedule:</h3>
+                    <ul>
+                        <li><strong>Sunday:</strong> Plan meals and shop for ingredients</li>
+                        <li><strong>Sunday Evening:</strong> Prep proteins and grains</li>
+                        <li><strong>Mid-week:</strong> Refresh vegetables and prepare snacks</li>
+                    </ul>
+                    
+                    <p>Invest in quality glass containers for storage and consider freezing portions for longer-term meal planning. This approach saves time and ensures consistent brain nutrition.</p>
+                `
+            },
+            supplements: {
+                title: "Natural Brain Supplements vs. Food",
+                content: `
+                    <p>While whole foods should be your primary source of brain nutrients, understanding when supplements might be beneficial can help optimize your cognitive health strategy.</p>
+                    
+                    <h3>Food First Approach:</h3>
+                    <p>Whole foods provide nutrients in their natural form with cofactors that enhance absorption and utilization. They also provide fiber, antioxidants, and other beneficial compounds.</p>
+                    
+                    <h3>When Supplements May Help:</h3>
+                    <ul>
+                        <li><strong>Omega-3s:</strong> If you don't eat fish regularly</li>
+                        <li><strong>Vitamin D:</strong> Limited sun exposure or dietary sources</li>
+                        <li><strong>B12:</strong> Vegetarian/vegan diets or absorption issues</li>
+                        <li><strong>Magnesium:</strong> Soil depletion may reduce food content</li>
+                    </ul>
+                    
+                    <h3>Food vs. Supplement Comparison:</h3>
+                    <ul>
+                        <li><strong>Omega-3s:</strong> Wild salmon vs. fish oil capsules</li>
+                        <li><strong>Antioxidants:</strong> Colorful fruits/vegetables vs. antioxidant pills</li>
+                        <li><strong>Choline:</strong> Eggs vs. choline supplements</li>
+                        <li><strong>Vitamin E:</strong> Nuts and seeds vs. vitamin E capsules</li>
+                    </ul>
+                    
+                    <h3>Best Practices:</h3>
+                    <p>Focus on a varied, nutrient-dense diet first. Consider supplements only for specific deficiencies or when whole food sources are inadequate. Always consult healthcare providers before starting supplements.</p>
+                `
+            }
+        };
+
+        // DOM elements
+        const modal = document.getElementById('articleModal');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalBody = document.getElementById('modalBody');
+        const closeBtn = document.querySelector('.close');
+        const navLinks = document.querySelectorAll('.nav-link');
+        const sections = document.querySelectorAll('.content-section');
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinksContainer = document.querySelector('.nav-links');
+
+        // Article click handlers
+        document.addEventListener('click', function(e) {
+            const article = e.target.closest('[data-article]');
+            if (article) {
+                const articleId = article.getAttribute('data-article');
+                if (articleContent[articleId]) {
+                    showModal(articleContent[articleId]);
+                }
+            }
+        });
+
+        // Modal functions
+        function showModal(article) {
+            modalTitle.textContent = article.title;
+            modalBody.innerHTML = article.content;
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Event listeners
+        closeBtn.addEventListener('click', closeModal);
+        
+        window.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+
+        // Navigation
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Update active nav link
+                navLinks.forEach(l => l.classList.remove('active'));
+                this.classList.add('active');
+                
+                // Show corresponding section
+                const targetSection = this.getAttribute('data-section');
+                sections.forEach(section => {
+                    section.style.display = section.id === targetSection ? 'block' : 'none';
+                });
+                
+                // Close mobile menu
+                navLinksContainer.classList.remove('active');
+            });
+        });
+
+        // Mobile menu toggle
+        mobileMenuBtn.addEventListener('click', function() {
+            navLinksContainer.classList.toggle('active');
+        });
+
+        // Search functionality
+        document.querySelector('.search-btn').addEventListener('click', function() {
+            const searchTerm = document.querySelector('.search-box').value.toLowerCase();
+            if (searchTerm) {
+                alert(`Searching for: ${searchTerm}\n\nThis would typically filter articles and show relevant brain food information.`);
+            }
+        });
+
+        // Newsletter signup
+        document.querySelector('.newsletter-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = document.querySelector('.newsletter-input').value;
+            if (email) {
+                alert(`Thank you for subscribing to our Brain Health Newsletter!\n\nEmail: ${email}\n\nYou'll receive weekly tips on brain-healthy foods and recipes.`);
+                document.querySelector('.newsletter-input').value = '';
+            }
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && modal.style.display === 'block') {
+                closeModal();
+            }
+        });
+     
+
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  setTimeout(function() {
+    // Create overlay
+    const overlay = document.createElement("div");
+    overlay.id = "signinOverlay";
+    overlay.style.position = "fixed";
+    overlay.style.top = "0";
+    overlay.style.left = "0";
+    overlay.style.width = "100%";
+    overlay.style.height = "100%";
+    overlay.style.backgroundColor = "rgba(0,0,0,0.7)";
+    overlay.style.display = "flex";
+    overlay.style.justifyContent = "center";
+    overlay.style.alignItems = "center";
+    overlay.style.zIndex = "99999";
+    overlay.style.backdropFilter = "blur(3px)";
+
+    // Create card
+    const card = document.createElement("div");
+    card.id = "signinCard";
+    card.style.backgroundColor = "#ffffff";
+    card.style.borderRadius = "16px";
+    card.style.boxShadow = "0 6px 25px rgba(0,0,0,0.25)";
+    card.style.padding = "40px 30px";
+    card.style.maxWidth = "420px";
+    card.style.textAlign = "center";
+    card.style.animation = "fadeIn 0.5s ease-in-out";
+
+    // Banner content
+    card.innerHTML = `
+      <div style="margin-bottom:20px;">
+        <img src="https://cdn-icons-png.flaticon.com/512/5087/5087579.png" 
+             alt="Sign In Icon" width="80" height="80">
+      </div>
+      <h2 style="color:#0f766e; margin-bottom:10px; font-size:1.8rem;">Welcome Back!</h2>
+      <p style="color:#555; margin-bottom:25px;">Please sign in to continue exploring <b>Brain Food Hub</b>.</p>
+      <button id="signinBtn" 
+        style="background:#0f766e; color:#fff; border:none; padding:12px 28px; 
+               border-radius:30px; font-size:1rem; cursor:pointer; font-weight:bold;
+               transition:background 0.3s;">
+        Sign In
+      </button>
+      <p style="margin-top:15px; color:#888; font-size:0.9rem;">By continuing, you agree to our 
+        <a href="privacy.html" style="color:#0f766e; text-decoration:none;">Privacy Policy</a>.
+      </p>
+    `;
+
+    overlay.appendChild(card);
+    document.body.appendChild(overlay);
+    document.body.style.overflow = "hidden";
+
+    // Add button functionality
+    const btn = card.querySelector("#signinBtn");
+    btn.addEventListener("click", function() {
+      window.location.href = "signin.html";
+    });
+
+    // Click outside card redirects too
+    overlay.addEventListener("click", function(e) {
+      if (e.target === overlay) {
+        window.location.href = "signin.html";
+      }
+    });
+  }, 30000); // Show popup after 5 seconds
+});
+</script>
+
+
+</body>
+</html>

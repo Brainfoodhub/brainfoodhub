@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Privacy Policy • Brain Food Hub</title>
+  <meta name="description" content="Privacy Policy for Brain Food Hub: how we collect, use, and protect your information."/>
+  <style>
+    /* Base */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: #f8fffe;
+    }
+    a { color: #2d5a27; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, #2d5a27 0%, #4a7c59 100%);
+      color: #fff;
+      position: sticky; top: 0; z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    .header-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 14px 0;
+    }
+    .logo { font-size: 1.25rem; font-weight: 700; color: #a8d5ba; white-space: nowrap; }
+
+    /* Nav */
+    nav { background: #4a7c59; }
+    .nav-inner {
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-links { list-style: none; display: flex; }
+    .nav-links li a {
+      display: block; color: #fff; padding: 14px 18px; transition: background .2s ease;
+    }
+    .nav-links li a:hover, .nav-links li a.active { background: #2d5a27; }
+    .menu-btn {
+      display: none; background: none; border: none; color: #fff;
+      font-size: 1.5rem; padding: 10px; cursor: pointer;
+    }
+
+    /* Hero */
+    .hero {
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+      padding: 28px;
+      margin: 26px 0 18px;
+    }
+    .hero h1 { color: #2d5a27; font-size: 1.8rem; margin-bottom: 8px; }
+    .meta { color: #666; font-size: .95rem; }
+
+    /* Content layout */
+    .content {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 24px;
+      margin-bottom: 48px;
+    }
+
+    /* TOC */
+    .toc {
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+      padding: 18px;
+      position: sticky; top: 96px;
+      align-self: start;
+    }
+    .toc h3 {
+      font-size: 1.05rem; color: #2d5a27; margin-bottom: 12px;
+    }
+    .toc ul { list-style: none; }
+    .toc a { display: block; padding: 8px 6px; border-radius: 6px; }
+    .toc a:hover { background: #f0f8f0; text-decoration: none; }
+
+    /* Policy Sections */
+    .policy {
+      display: flex; flex-direction: column; gap: 16px;
+    }
+    .policy-section {
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+      padding: 20px;
+    }
+    .policy-section h2 {
+      color: #2d5a27; font-size: 1.25rem; margin-bottom: 8px;
+    }
+    .policy-section p { color: #444; }
+    .policy-section ul { margin-left: 18px; padding-left: 4px; }
+    .badge {
+      display: inline-block; background: #a8d5ba; color: #2d5a27;
+      font-weight: 600; font-size: .85rem; padding: 4px 10px; border-radius: 999px;
+      margin-left: 8px;
+    }
+
+    /* Footer */
+    footer {
+      background: #2d5a27; color: #fff; margin-top: 40px; padding: 28px 0;
+    }
+    .footer-grid {
+      display: grid; gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      margin-bottom: 10px;
+    }
+    .footer-grid h4 { color: #a8d5ba; margin-bottom: 10px; }
+    .footer-grid a { color: #fff; display: block; margin: 4px 0; text-decoration: none; }
+    .footer-grid a:hover { color: #a8d5ba; text-decoration: underline; }
+    .copy { text-align: center; font-size: .95rem; color: #e7f5ed; }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .content { grid-template-columns: 1fr; }
+      .toc { position: static; }
+    }
+    @media (max-width: 720px) {
+      .nav-links {
+        display: none; position: absolute; left: 0; right: 0; top: 100%;
+        background: #4a7c59; flex-direction: column;
+      }
+      .nav-links.show { display: flex; }
+      .menu-btn { display: block; }
+    }
+  </style>
+</head>
+<body>
+    
+  <header role="banner">
+    <div class="container">
+      <div class="header-inner" aria-label="Site header">
+        <div class="logo">🧠 Brain Food Hub</div>
+      </div>
+    </div>
+    <nav role="navigation" aria-label="Primary">
+      <div class="container">
+        <div class="nav-inner">
+          <button class="menu-btn" aria-expanded="false" aria-controls="primary-menu" aria-label="Toggle menu">☰</button>
+          <ul id="primary-menu" class="nav-links">
+            <li><a href="Brain_health.html">Home</a></li>
+            <li><a href="about.html">About us</a></li>
+            <li><a href="contact.html">Contact us</a></li>
+            <li><a class="active" href="privacy.html" aria-current="page">Privacy Policy</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+   
+  <main id="main" class="container" role="main">
+    <section class="hero" aria-labelledby="pp-title">
+      <h1 id="pp-title">Privacy Policy</h1>
+      <p class="meta">
+        Effective date: <span id="effective-date">October 13, 2025</span>
+        <span class="badge" aria-label="Applies to all users">Global</span>
+      </p>
+    </section>
+
+     
+    <div class="content">
+      <aside class="toc" aria-labelledby="toc-title">
+        <h3 id="toc-title">On this page</h3>
+        <ul>
+          <li><a href="#intro">1. Introduction</a></li>
+          <li><a href="#info-we-collect">2. Information We Collect</a></li>
+          <li><a href="#how-we-use">3. How We Use Information</a></li>
+          <li><a href="#cookies">4. Cookies & Similar Tech</a></li>
+          <li><a href="#sharing">5. How We Share Information</a></li>
+          <li><a href="#security">6. Data Security</a></li>
+          <li><a href="#your-rights">7. Your Rights & Choices</a></li>
+          <li><a href="#children">8. Children’s Privacy</a></li>
+          <li><a href="#changes">9. Changes to This Policy</a></li>
+          <li><a href="#contact">10. Contact Us</a></li>
+        </ul>
+      </aside>
+
+      <div class="policy">
+        <section id="intro" class="policy-section" aria-labelledby="intro-h">
+          <h2 id="intro-h">1. Introduction</h2>
+          <p>
+            At Brain Food Hub (“we”, “our”, or “us”), we care about your privacy. This Privacy Policy explains
+            what information we collect, how we use it, and the choices you have. By using our website, you agree
+            to the practices described here.
+          </p>
+        </section>
+
+        <section id="info-we-collect" class="policy-section" aria-labelledby="info-h">
+          <h2 id="info-h">2. Information We Collect</h2>
+          <p>We may collect the following types of information when you use our site:</p>
+          <ul>
+            <li><strong>Contact Information:</strong> such as your name and email when you subscribe to our newsletter or contact us.</li>
+            <li><strong>Usage Data:</strong> pages viewed, links clicked, and other interactions that help us understand site performance.</li>
+            <li><strong>Device/Technical Data:</strong> browser type, device type, approximate location, and referring URLs.</li>
+            <li><strong>Optional Submissions:</strong> feedback or inquiries you send via forms or email.</li>
+          </ul>
+        </section>
+
+        <section id="how-we-use" class="policy-section" aria-labelledby="use-h">
+          <h2 id="use-h">3. How We Use Information</h2>
+          <p>We use information to:</p>
+          <ul>
+            <li>Provide, maintain, and improve our content and features.</li>
+            <li>Send newsletters and updates you opt into, and respond to inquiries.</li>
+            <li>Analyze aggregate usage to improve usability and performance.</li>
+            <li>Protect against fraud, abuse, or security issues.</li>
+            <li>Comply with legal obligations and enforce our terms.</li>
+          </ul>
+        </section>
+
+        <section id="cookies" class="policy-section" aria-labelledby="cookies-h">
+          <h2 id="cookies-h">4. Cookies & Similar Technologies</h2>
+          <p>
+            We may use cookies or similar technologies to remember preferences and analyze site traffic.
+            You can control cookies through your browser settings. Disabling cookies may affect certain features.
+          </p>
+        </section>
+
+        <section id="sharing" class="policy-section" aria-labelledby="share-h">
+          <h2 id="share-h">5. How We Share Information</h2>
+          <p>
+            We do not sell your personal information. We may share information with:
+          </p>
+          <ul>
+            <li><strong>Service Providers:</strong> who help us operate our site (e.g., analytics, email delivery) under confidentiality obligations.</li>
+            <li><strong>Legal Compliance:</strong> when required by law, regulation, or to protect rights and safety.</li>
+            <li><strong>Business Transfers:</strong> in connection with a merger, acquisition, or asset sale, where permitted by law.</li>
+          </ul>
+        </section>
+
+        <section id="security" class="policy-section" aria-labelledby="sec-h">
+          <h2 id="sec-h">6. Data Security</h2>
+          <p>
+            We use reasonable administrative, technical, and physical safeguards to protect your information.
+            However, no method of transmission or storage is 100% secure, and we cannot guarantee absolute security.
+          </p>
+        </section>
+
+        <section id="your-rights" class="policy-section" aria-labelledby="rights-h">
+          <h2 id="rights-h">7. Your Rights & Choices</h2>
+          <p>Depending on your location, you may have rights to:</p>
+          <ul>
+            <li>Access, correct, or delete your personal information.</li>
+            <li>Opt out of marketing communications at any time via unsubscribe links.</li>
+            <li>Restrict or object to certain processing where applicable by law.</li>
+          </ul>
+          <p>
+            To exercise your rights, please see the Contact section below. We will respond as required by law.
+          </p>
+        </section>
+
+        <section id="children" class="policy-section" aria-labelledby="kids-h">
+          <h2 id="kids-h">8. Children’s Privacy</h2>
+          <p>
+            Our content is intended for a general audience and is not directed to children under 13. We do not knowingly
+            collect personal information from children. If you believe a child provided us information, please contact us,
+            and we will take appropriate steps to delete it.
+          </p>
+        </section>
+
+        <section id="changes" class="policy-section" aria-labelledby="changes-h">
+          <h2 id="changes-h">9. Changes to This Policy</h2>
+          <p>
+            We may update this Privacy Policy from time to time. We will update the “Effective date” at the top when changes occur.
+            Your continued use of the site after changes indicates your acceptance of the updated policy.
+          </p>
+        </section>
+
+        <section id="contact" class="policy-section" aria-labelledby="contact-h">
+          <h2 id="contact-h">10. Contact Us</h2>
+          <p>
+            For questions, requests, or concerns regarding this Privacy Policy, please visit our
+            <a href="contact.html">Contact page</a> or email us at
+            <a href="mailto:privacy@brainfoodhub.example">privacy@brainfoodhub.example</a>.
+          </p>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <!-- <h4>Brain Food Categories</h4>
+          <a href="Brain_health-VPBoo.html#antioxidants">Antioxidant Foods</a>
+          <a href="Brain_health-VPBoo.html#omega3">Omega-3 Sources</a>
+          <a href="Brain_health-VPBoo.html#memory">Memory Boosters</a>
+          <a href="Brain_health-VPBoo.html#inflammation">Anti-Inflammatory</a>
+        </div>
+        <div>
+          <h4>Resources</h4>
+          <a href="Brain_health-VPBoo.html#planning">Meal Planning Guide</a>
+          <a href="Brain_health-VPBoo.html">Recipe Collection</a>
+          <a href="Brain_health-VPBoo.html">Nutrition Tips</a>
+          <a href="Brain_health-VPBoo.html">Shopping Lists</a>
+        </div> -->
+        <div>
+          <h4>Company</h4>
+           <a href="Brain_health.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="contact.html">Contact Us</a>
+          <a href="privacy.html">Privacy Policy</a>
+        </div>
+      </div>
+      <p class="copy">© <span id="year"></span> Brain Food Hub. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    (function() {
+      const btn = document.querySelector('.menu-btn');
+      const menu = document.getElementById('primary-menu');
+      if (btn && menu) {
+        btn.addEventListener('click', () => {
+          const expanded = btn.getAttribute('aria-expanded') === 'true';
+          btn.setAttribute('aria-expanded', String(!expanded));
+          menu.classList.toggle('show');
+        });
+      }
+    })();
+
+    // Set current year + default effective date if not changed
+    (function() {
+      const y = document.getElementById('year');
+      if (y) y.textContent = new Date().getFullYear();
+      // If you want to auto-set effective date to today, uncomment below:
+      // document.getElementById('effective-date').textContent = new Date().toLocaleDateString();
+    })();
+
+    // Smooth scroll for in-page TOC links
+    (function() {
+      const tocLinks = document.querySelectorAll('.toc a[href^="#"]');
+      for (const link of tocLinks) {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          const target = document.querySelector(link.getAttribute('href'));
+          if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+      }
+    })();
+  </script>
+</body>
+</html>
